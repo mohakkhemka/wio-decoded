@@ -1,10 +1,23 @@
 <!DOCTYPE html>
-<!-- saved from url=(0049)file:///Users/mohakkhemka/Downloads/index_21.html -->
+<!-- saved from url=(0049)file:///Users/mohakkhemka/Downloads/index_22.html -->
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Wio Invest — Hometask Analysis</title>
-<script src="./index_files/chart.umd.js"></script>
+<script src="./index_files/chart.umd.min.js"></script>
+<script>
+window.addEventListener('error', function(e) {
+  if (e.filename && e.filename.includes('chart')) {
+    document.querySelectorAll('canvas').forEach(function(c) {
+      c.style.display = 'none';
+      var msg = document.createElement('div');
+      msg.style.cssText = 'color:#4A4670;font-size:11px;padding:40px;text-align:center;';
+      msg.textContent = 'Chart unavailable — data in tables below';
+      c.parentNode.insertBefore(msg, c);
+    });
+  }
+}, true);
+</script>
 <style>
 :root {
   --p:#6B4EFF;--pd:#4B35CC;--pdim:rgba(107,78,255,0.12);--v:#9B7EFF;
@@ -291,7 +304,7 @@ tr:hover td{background:var(--bg3);}
 
   <div class="sec">
     <div class="stitle">Monthly volume &amp; trade count</div>
-    <div class="card"><div class="cc" style="height:220px;"><canvas id="monthlyChart" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
+    <div class="card"><div class="cc" style="height:220px;"><canvas id="monthlyChart" height="440" style="display: block; box-sizing: border-box; height: 220px; width: 1014px;" width="2028"></canvas></div>
       <div class="callout ca" style="margin-top:10px;">May shows a dip in both volume and trade count. Recovery is visible through June–August. Dataset covers 5 months only — trends should be interpreted with that window in mind.</div>
     </div>
   </div>
@@ -379,8 +392,8 @@ tr:hover td{background:var(--bg3);}
   </div>
   <div class="sec">
     <div class="stitle">Asset class volume &amp; activity</div>
-    <div class="card">
-      <table>
+    <div class="card" style="overflow-x:auto;">
+      <table style="min-width:900px;">
         <thead><tr><th>Product</th><th>Asset class</th><th>Volume</th><th>% of total</th><th>Users</th><th>Trades</th><th>Median trade</th><th>Fill rate</th><th>Commission</th></tr></thead>
         <tbody>
           <tr><td><strong>RTY</strong></td><td>US Equities</td><td class="mono">$4,074M</td><td class="mono" style="color:var(--p)">83.6%</td><td class="mono">24,839</td><td class="mono">614,801</td><td class="mono">$594</td><td class="mono" style="color:var(--g)">87.0%</td><td style="font-size:10px;color:var(--t2)">0.2% ($0.50 min, $4.95 max) + 5% VAT</td></tr>
