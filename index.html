@@ -1,0 +1,2155 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)file:///Users/mohakkhemka/Downloads/index_20.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wio Invest — Hometask Analysis</title>
+<script src="./index_files/chart.umd.js"></script>
+<style>
+:root {
+  --p:#6B4EFF;--pd:#4B35CC;--pdim:rgba(107,78,255,0.12);--v:#9B7EFF;
+  --bg:#0C0A1A;--bg2:#120F28;--bg3:#1A1640;--bg4:#231F50;
+  --bord:rgba(107,78,255,0.18);--bord2:rgba(255,255,255,0.07);
+  --t:#F2F0FF;--t2:#9893B8;--t3:#4A4670;
+  --g:#2DB87A;--a:#E09C3A;--r:#E05555;
+  --font:'Inter',system-ui,sans-serif;--mono:'JetBrains Mono','Fira Code',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--t);font-family:var(--font);font-size:14px;line-height:1.6;min-height:100vh;}
+
+nav{position:sticky;top:0;z-index:100;background:rgba(12,10,26,0.97);backdrop-filter:blur(16px);border-bottom:1px solid var(--bord);padding:0 24px;display:flex;align-items:center;height:52px;gap:0;}
+.logo{display:flex;align-items:center;gap:8px;margin-right:20px;}
+.lm{width:28px;height:28px;background:var(--p);border-radius:7px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:900;color:#fff;}
+.lt{font-size:14px;font-weight:700;color:var(--t);}.lt span{color:var(--v);}
+.sep{width:1px;height:18px;background:var(--bord2);margin-right:16px;}
+.nav-links{display:flex;gap:1px;flex-wrap:wrap;}
+.nl{font-size:11px;color:var(--t2);padding:4px 9px;border-radius:5px;cursor:pointer;border:none;background:none;transition:all 0.15s;white-space:nowrap;}
+.nl:hover{color:var(--t);background:var(--bg3);}
+.nl.active{color:var(--v);background:var(--pdim);font-weight:500;}
+.nl.p2{color:#C8A8FF;}
+.nl.p2.active{background:rgba(200,168,255,0.1);color:#C8A8FF;}
+.nb{display:inline-block;font-size:9px;font-weight:700;padding:1px 4px;border-radius:3px;margin-left:3px;vertical-align:middle;}
+.nb1{background:var(--pdim);color:var(--v);}
+.nb2{background:rgba(200,168,255,0.12);color:#C8A8FF;}
+.nr{margin-left:auto;font-size:10px;color:var(--t3);font-family:var(--mono);}
+
+.page{display:none;padding:32px 24px 60px;max-width:1100px;margin:0 auto;}
+.page.active{display:block;}
+
+.hero{margin-bottom:28px;padding-bottom:24px;border-bottom:1px solid var(--bord2);}
+.eyebrow{font-size:10px;font-weight:600;color:var(--v);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.eyebrow::before{content:'';width:14px;height:2px;background:var(--p);border-radius:1px;}
+.htitle{font-size:24px;font-weight:700;color:var(--t);line-height:1.2;margin-bottom:6px;letter-spacing:-0.4px;}
+.htitle em{color:var(--v);font-style:normal;}
+.hsub{font-size:13px;color:var(--t2);max-width:620px;line-height:1.7;}
+
+.mg{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin-bottom:24px;}
+.mc{background:var(--bg2);border:1px solid var(--bord2);border-radius:8px;padding:14px 16px;}
+.mc:hover{border-color:var(--bord);}
+.ml{font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:6px;}
+.mv{font-size:22px;font-weight:700;color:var(--t);font-family:var(--mono);line-height:1;}
+.ms{font-size:10px;color:var(--t3);margin-top:3px;}
+.mc.hl{border-color:var(--bord);}.mc.hl .mv{color:var(--v);}
+
+.sec{margin-bottom:28px;}
+.stitle{font-size:11px;font-weight:700;color:var(--t2);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--bord2);}
+
+.card{background:var(--bg2);border:1px solid var(--bord2);border-radius:8px;padding:16px 18px;}
+.card:hover{border-color:var(--bord);}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+
+.br{display:flex;align-items:center;gap:8px;margin-bottom:7px;}
+.bl{font-size:12px;color:var(--t);width:170px;flex-shrink:0;}
+.bw{flex:1;height:18px;background:var(--bg3);border-radius:3px;overflow:hidden;}
+.bf{height:100%;border-radius:3px;display:flex;align-items:center;padding-left:6px;font-size:9px;font-weight:700;color:rgba(255,255,255,0.85);white-space:nowrap;}
+.bv{font-size:10px;color:var(--t2);width:80px;text-align:right;flex-shrink:0;}
+
+table{width:100%;border-collapse:collapse;}
+th{font-size:10px;color:var(--t3);font-weight:500;text-align:left;padding:6px 8px;border-bottom:1px solid var(--bord2);text-transform:uppercase;letter-spacing:0.05em;}
+td{font-size:11px;color:var(--t);padding:8px 8px;border-bottom:1px solid var(--bord2);}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:var(--bg3);}
+.mono{font-family:var(--mono);}
+.tag{display:inline-block;font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;text-transform:uppercase;letter-spacing:0.04em;}
+.tr{background:rgba(224,85,85,0.15);color:var(--r);}
+.tg{background:rgba(45,184,122,0.15);color:var(--g);}
+.ta{background:rgba(224,156,58,0.15);color:var(--a);}
+.tp{background:var(--pdim);color:var(--v);}
+
+.ins{background:var(--bg2);border:1px solid var(--bord2);border-radius:8px;padding:13px 15px;margin-bottom:8px;border-left:3px solid transparent;}
+.ins.r{border-left-color:var(--r);}
+.ins.a{border-left-color:var(--a);}
+.ins.p{border-left-color:var(--p);}
+.ins.g{border-left-color:var(--g);}
+.ih{display:flex;align-items:center;gap:7px;margin-bottom:4px;}
+.it{font-size:12px;font-weight:600;color:var(--t);}
+.ib{font-size:11px;color:var(--t2);line-height:1.65;}
+
+.callout{padding:10px 13px;border-radius:7px;font-size:11px;margin-top:8px;line-height:1.6;}
+.cr{background:rgba(224,85,85,0.08);border:1px solid rgba(224,85,85,0.2);color:var(--r);}
+.cp{background:var(--pdim);border:1px solid var(--bord);color:var(--v);}
+.ca{background:rgba(224,156,58,0.08);border:1px solid rgba(224,156,58,0.2);color:var(--a);}
+.cg{background:rgba(45,184,122,0.08);border:1px solid rgba(45,184,122,0.2);color:var(--g);}
+
+.ph{background:var(--bg2);border:1px dashed var(--bord);border-radius:8px;padding:48px 32px;text-align:center;}
+.phi{font-size:28px;margin-bottom:12px;}
+.pht{font-size:15px;font-weight:600;color:var(--t);margin-bottom:6px;}
+.phb{font-size:12px;color:var(--t2);max-width:360px;margin:0 auto;line-height:1.7;}
+.phbadge{display:inline-block;margin-top:14px;font-size:10px;font-weight:600;padding:4px 10px;border-radius:5px;background:var(--pdim);color:var(--v);}
+
+.cc{position:relative;width:100%;}
+
+.roadmap-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;}
+.rc{background:var(--bg2);border:1px solid var(--bord2);border-radius:8px;padding:14px 16px;}
+.rp{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;padding-bottom:6px;border-bottom:1px solid var(--bord2);}
+.ri{display:flex;gap:8px;margin-bottom:10px;}
+.rd{width:5px;height:5px;border-radius:50%;margin-top:6px;flex-shrink:0;}
+.rit{font-size:12px;font-weight:700;color:var(--t);margin-bottom:3px;}
+.rid{font-size:11px;color:var(--t2);line-height:1.6;}
+
+.pc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:10px;}
+.pc{background:var(--bg2);border:1px solid var(--bord2);border-radius:8px;padding:14px 16px;}
+.pc:hover{border-color:var(--bord);}
+.pcode{font-size:20px;font-weight:800;font-family:var(--mono);color:var(--v);}
+.plike{font-size:11px;color:var(--t2);margin-top:1px;}
+.pnote{font-size:10px;color:var(--t2);line-height:1.6;margin:8px 0;}
+.pstats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:8px;}
+.psl{font-size:9px;color:var(--t3);text-transform:uppercase;letter-spacing:0.05em;}
+.psv{font-size:12px;font-weight:600;font-family:var(--mono);color:var(--t);}
+.mbar{height:2px;background:var(--bg3);border-radius:2px;margin-top:8px;overflow:hidden;}
+.mbarf{height:100%;background:var(--p);border-radius:2px;}
+
+@media(max-width:768px){
+  .page{padding:20px 14px 48px;}
+  .g2,.g3,.roadmap-grid{grid-template-columns:1fr;}
+  nav{padding:6px 14px;height:auto;flex-wrap:wrap;}
+  .nr{display:none;}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo"><div class="lm">W</div><div class="lt">Wio <span>Invest</span></div></div>
+  <div class="sep"></div>
+  <div class="nav-links">
+    <button class="nl active" onclick="go(&#39;p1&#39;,this)">Customer Types<span class="nb nb1">1</span></button>
+    <button class="nl" onclick="go(&#39;p2&#39;,this)">Behaviour<span class="nb nb1">2</span></button>
+    <button class="nl" onclick="go(&#39;p3&#39;,this)">Patterns<span class="nb nb1">3</span></button>
+    <button class="nl" onclick="go(&#39;p4&#39;,this)">Takeaways<span class="nb nb1">4</span></button>
+    <button class="nl" onclick="go(&#39;p5&#39;,this)">Roadmap<span class="nb nb1">5</span></button>
+    <button class="nl p2" onclick="go(&#39;p6&#39;,this)">Product Bets<span class="nb nb2">6</span></button>
+    <button class="nl p2" onclick="go(&#39;p7&#39;,this)">Prototype<span class="nb nb2">7</span></button>
+    <button class="nl p2" onclick="go(&#39;p8&#39;,this)">Problem<span class="nb nb2">8</span></button>
+    <button class="nl p2" onclick="go(&#39;p9&#39;,this)">Business Case<span class="nb nb2">9</span></button>
+    <button class="nl p2" onclick="go(&#39;p10&#39;,this)">Risks &amp; OKRs<span class="nb nb2">10</span></button>
+  </div>
+  <div class="nr">Apr–Aug 2025 · 1.05M orders</div>
+</nav>
+
+<!-- TAB 1: CUSTOMER TYPES -->
+<div id="page-p1" class="page active">
+  <div class="hero">
+    <div class="eyebrow">Part 1 · Point 1</div>
+    <div class="htitle">What types of customers are <em>trading</em>?</div>
+    <div class="hsub">36,413 users onboarded. 35,605 have traded at some point. Segmented by two independent lenses — trading frequency and trade size — to reveal who is actually on this platform.</div>
+  </div>
+
+  <div class="mg">
+    <div class="mc hl"><div class="ml">Total traders</div><div class="mv">35,605</div><div class="ms">of 36,413 onboarded</div></div>
+    <div class="mc"><div class="ml">Total orders</div><div class="mv">1.05M</div><div class="ms">883k filled · 84.2%</div></div>
+    <div class="mc"><div class="ml">Total volume</div><div class="mv">$4.87B</div><div class="ms">USD normalised</div></div>
+    <div class="mc"><div class="ml">Median trade</div><div class="mv">$479</div><div class="ms">mean $5,517 — skewed by power traders</div></div>
+    <div class="mc"><div class="ml">Products</div><div class="mv">7</div><div class="ms">RTY dominates at 69.6%</div></div>
+    <div class="mc"><div class="ml">Data window</div><div class="mv">5 mo</div><div class="ms">Apr–Aug 2025</div></div>
+  </div>
+
+  <div class="sec">
+    <div class="stitle">Frequency segments — how often users trade</div>
+    <div class="g2">
+      <div class="card">
+        <div style="font-size:11px;color:var(--t2);margin-bottom:10px;">Share of total volume by segment</div>
+        <div class="br"><div class="bl">One-timer (1 trade)</div><div class="bw"><div class="bf" style="width:0.3%;background:#2A2448">&nbsp;</div></div><div class="bv">4,670 users</div></div>
+        <div class="br"><div class="bl">Occasional (2–5)</div><div class="bw"><div class="bf" style="width:2%;background:#4A4670">2%</div></div><div class="bv">10,493 users</div></div>
+        <div class="br"><div class="bl">Regular (6–20)</div><div class="bw"><div class="bf" style="width:7.9%;background:var(--a)">7.9%</div></div><div class="bv">11,586 users</div></div>
+        <div class="br"><div class="bl">Active (21–100)</div><div class="bw"><div class="bf" style="width:22.2%;background:var(--v)">22.2%</div></div><div class="bv">7,237 users</div></div>
+        <div class="br"><div class="bl">Power (100+ trades)</div><div class="bw"><div class="bf" style="width:67.5%;background:var(--p)">67.5%</div></div><div class="bv">1,619 users</div></div>
+        <div class="callout cp" style="margin-top:10px;">4.5% of users (Power) generate <strong>67.5%</strong> of all volume. Extreme concentration.</div>
+      </div>
+      <div class="card">
+        <div style="font-size:11px;color:var(--t2);margin-bottom:10px;">Share of users by segment</div>
+        <div class="br"><div class="bl">One-timer (1 trade)</div><div class="bw"><div class="bf" style="width:13.1%;background:#2A2448">13.1%</div></div><div class="bv">4,670</div></div>
+        <div class="br"><div class="bl">Occasional (2–5)</div><div class="bw"><div class="bf" style="width:29.5%;background:#4A4670">29.5%</div></div><div class="bv">10,493</div></div>
+        <div class="br"><div class="bl">Regular (6–20)</div><div class="bw"><div class="bf" style="width:32.5%;background:var(--a)">32.5%</div></div><div class="bv">11,586</div></div>
+        <div class="br"><div class="bl">Active (21–100)</div><div class="bw"><div class="bf" style="width:20.3%;background:var(--v)">20.3%</div></div><div class="bv">7,237</div></div>
+        <div class="br"><div class="bl">Power (100+)</div><div class="bw"><div class="bf" style="width:4.5%;background:var(--p)">4.5%</div></div><div class="bv">1,619</div></div>
+        <div class="callout ca" style="margin-top:10px;"><strong>62%</strong> of users are Occasional or One-timers — they trade infrequently or only once.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="stitle">Trade size segments — ticket size per user (median, USD normalised)</div>
+    <div class="g2">
+      <div class="card">
+        <div style="font-size:11px;color:var(--t2);margin-bottom:10px;">Users by median trade size</div>
+        <div class="br"><div class="bl">Small (&lt;$100)</div><div class="bw"><div class="bf" style="width:23.3%;background:#2A2A5A">23.3%</div></div><div class="bv">8,310</div></div>
+        <div class="br"><div class="bl">Medium ($100–1k)</div><div class="bw"><div class="bf" style="width:44.6%;background:#3A3A7A">44.6%</div></div><div class="bv">15,876</div></div>
+        <div class="br"><div class="bl">Growth ($1k–5k)</div><div class="bw"><div class="bf" style="width:21.2%;background:var(--p)">21.2%</div></div><div class="bv">7,551</div></div>
+        <div class="br"><div class="bl">High ($5k–10k)</div><div class="bw"><div class="bf" style="width:5.4%;background:var(--a)">5.4%</div></div><div class="bv">1,910</div></div>
+        <div class="br"><div class="bl">Whale ($10k+)</div><div class="bw"><div class="bf" style="width:5.5%;background:var(--r)">5.5%</div></div><div class="bv">1,957</div></div>
+      </div>
+      <div class="card">
+        <div style="font-size:11px;color:var(--t2);margin-bottom:10px;">Volume share by trade size</div>
+        <div class="cc" style="height:200px;"><canvas id="sizeVolChart" width="964" height="400" style="display: block; box-sizing: border-box; height: 200px; width: 482px;"></canvas></div>
+      </div>
+    </div>
+    <div class="callout cp" style="margin-top:8px;"><strong>68% of users trade under $1,000 per ticket</strong> — genuine retail profile. Small + Medium segments combined. Whale segment (5.5% of users) generates 70.4% of volume. Mean trade size of $5,517 is skewed by large whale ticket sizes; median $479 is the real number.</div>
+  </div>
+
+  <div class="sec">
+    <div class="stitle">Assumptions</div>
+    <div class="card">
+      <ul style="font-size:11px;color:var(--t2);line-height:2;padding-left:14px;">
+        <li>AED values normalised to USD at 3.67 throughout for cross-product comparisons</li>
+        <li>Trade size segments based on median trade size per user — not mean, to avoid power-trader distortion</li>
+        <li>Dataset covers Apr–Aug 2025 only (5 months). All conclusions are window-limited</li>
+        <li>287 onboarded users placed zero orders — excluded from trader analysis</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 2: SEGMENT BEHAVIOUR -->
+<div id="page-p2" class="page">
+  <div class="hero">
+    <div class="eyebrow">Part 1 · Point 2</div>
+    <div class="htitle">How do segments <em>behave</em>?</div>
+    <div class="hsub">What they trade, how often, in what size, and how they interact with the buy/sell dynamic. Each segment tells a different story.</div>
+  </div>
+
+  <div class="sec">
+    <div class="stitle">Frequency segment — full behaviour profile</div>
+    <div class="card">
+      <table>
+        <thead><tr><th>Segment</th><th>Users</th><th>Avg trades</th><th>Avg volume</th><th>Avg products</th><th>Avg instruments</th><th>Buy %</th><th>Round-trip %</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Power</strong></td><td class="mono">1,619</td><td class="mono">251</td><td class="mono">$2.03M</td><td class="mono">2.7</td><td class="mono">39</td><td class="mono" style="color:var(--g)">67%</td><td class="mono">98%</td></tr>
+          <tr><td><strong>Active</strong></td><td class="mono">7,237</td><td class="mono">43</td><td class="mono">$150k</td><td class="mono">2.3</td><td class="mono">14</td><td class="mono" style="color:var(--g)">73%</td><td class="mono">89%</td></tr>
+          <tr><td><strong>Regular</strong></td><td class="mono">11,586</td><td class="mono">11</td><td class="mono">$33k</td><td class="mono">1.8</td><td class="mono">5</td><td class="mono">75%</td><td class="mono">69%</td></tr>
+          <tr><td><strong>Occasional</strong></td><td class="mono">10,493</td><td class="mono">3</td><td class="mono">$9k</td><td class="mono">1.3</td><td class="mono">2</td><td class="mono">74%</td><td class="mono">39%</td></tr>
+          <tr><td><strong>One-timer</strong></td><td class="mono">4,670</td><td class="mono">1</td><td class="mono">$3.5k</td><td class="mono">1.0</td><td class="mono">1</td><td class="mono">70%</td><td class="mono">0%</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="stitle">Trading cadence — how frequently users return</div>
+    <div class="g2">
+      <div class="card">
+        <div style="font-size:11px;color:var(--t2);margin-bottom:10px;">Classified by median gap between sessions</div>
+        <div class="br"><div class="bl">Daily (≤2 day gap)</div><div class="bw"><div class="bf" style="width:15.8%;background:var(--p)">15.8%</div></div><div class="bv">4,595 users</div></div>
+        <div class="br"><div class="bl">Weekly (3–7 days)</div><div class="bw"><div class="bf" style="width:35.6%;background:var(--v)">35.6%</div></div><div class="bv">10,354 users</div></div>
+        <div class="br"><div class="bl">Monthly (8–30 days)</div><div class="bw"><div class="bf" style="width:34.8%;background:var(--a)">34.8%</div></div><div class="bv">10,120 users</div></div>
+        <div class="br"><div class="bl">Infrequent (30d+)</div><div class="bw"><div class="bf" style="width:13%;background:#3A3A6A">13%</div></div><div class="bv">3,777 users</div></div>
+        <div class="br"><div class="bl">One-session only</div><div class="bw"><div class="bf" style="width:23.3%;background:#2A2448">23.3%</div></div><div class="bv">6,759 users</div></div>
+        <div class="callout cp" style="margin-top:8px;">Median gap between sessions: <strong>3 days</strong>. Once a user is active, they return frequently. Retention within the active cohort is strong.<br><br><span style="font-size:10px;color:var(--t3);"><strong style="color:var(--t2)">Buy %</strong> = share of filled orders that were buy orders. <strong style="color:var(--t2)">Round-trip %</strong> = users with at least one buy AND one sell filled in the period — not necessarily paired trades.</span></div>
+      </div>
+      <div class="card">
+        <div style="font-size:11px;color:var(--t2);margin-bottom:10px;">Buy vs sell ratio by cadence</div>
+        <div class="cc" style="height:200px;"><canvas id="buySellChart" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
+        <div class="callout cp" style="margin-top:8px;">Daily traders most balanced (67% buy / 33% sell). Monthly traders predominantly buy (77%). Active traders trade both ways; passive investors accumulate.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="stitle">Volume by cadence</div>
+    <div class="card">
+      <table>
+        <thead><tr><th>Cadence</th><th>Users</th><th>Total volume</th><th>Avg volume/user</th><th>% of total vol</th></tr></thead>
+        <tbody>
+          <tr><td><strong>Daily</strong></td><td class="mono">4,595</td><td class="mono">$3.59B</td><td class="mono">$781k</td><td class="mono" style="color:var(--p)">73.7%</td></tr>
+          <tr><td><strong>Weekly</strong></td><td class="mono">10,354</td><td class="mono">$964M</td><td class="mono">$93k</td><td class="mono">19.8%</td></tr>
+          <tr><td><strong>Monthly</strong></td><td class="mono">10,120</td><td class="mono">$249M</td><td class="mono">$25k</td><td class="mono">5.1%</td></tr>
+          <tr><td><strong>Infrequent</strong></td><td class="mono">3,777</td><td class="mono">$36M</td><td class="mono">$10k</td><td class="mono">0.7%</td></tr>
+        </tbody>
+      </table>
+      <div class="callout ca" style="margin-top:8px;">Daily traders are 15.8% of users but generate 73.7% of volume. The platform's commercial health is overwhelmingly dependent on this segment. <em style="color:var(--t3)">One-session users (6,759) excluded — no return gap to measure. Each user appears in exactly one cadence bucket based on median gap between sessions.</em></div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 3: PATTERNS & TRENDS -->
+<div id="page-p3" class="page">
+  <div class="hero">
+    <div class="eyebrow">Part 1 · Point 3</div>
+    <div class="htitle">Patterns &amp; <em>trends</em></div>
+    <div class="hsub">What stands out in the data and what is likely driving it.</div>
+  </div>
+
+  <div class="sec">
+    <div class="stitle">Monthly volume &amp; trade count</div>
+    <div class="card"><div class="cc" style="height:220px;"><canvas id="monthlyChart" height="0" style="display: block; box-sizing: border-box; height: 0px; width: 0px;" width="0"></canvas></div>
+      <div class="callout ca" style="margin-top:10px;">May shows a dip in both volume and trade count. Recovery is visible through June–August. Dataset covers 5 months only — trends should be interpreted with that window in mind.</div>
+    </div>
+  </div>
+
+
+  <div class="sec">
+    <div class="stitle">Product identification — decoded from data signals</div>
+    <div class="card">
+      <div style="font-size:11px;color:var(--t2);margin-bottom:10px;">Product codes are anonymised. Identification based on: currency, instrument count, quantity behaviour, buy/sell ratio, trade size, and cross-reference with wioinvest.io public product page.</div>
+      <table>
+        <thead><tr><th>Code</th><th>Best guess</th><th>Currency</th><th>Instruments</th><th>Key signal</th><th>Confidence</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>RTY</strong></td><td>US Equities (fractional shares)</td><td class="mono">USD</td><td class="mono">2,785</td>
+            <td style="font-size:10px;color:var(--t2);">2,785 instruments = full US market. 85% fractional qty. Median qty ~10 shares. Dominant product (83.6% of volume). Confirmed on wioinvest.io.</td>
+            <td><span class="tag tg">Confirmed</span></td>
+          </tr>
+          <tr>
+            <td><strong>QWE</strong></td><td>Crypto (BTC, ETH, XRP via Fuze)</td><td class="mono">AED</td><td class="mono">44</td>
+            <td style="font-size:10px;color:var(--t2);">AED-denominated. App verified: 44 crypto assets listed. OTC via Fuze partnership. 75% buy. AED denomination confirmed live in app.</td>
+            <td><span class="tag tg">App verified</span></td>
+          </tr>
+          <tr>
+            <td><strong>ZXC</strong></td><td>UAE Stocks (ADX + DFM combined)</td><td class="mono">AED</td><td class="mono">143</td>
+            <td style="font-size:10px;color:var(--t2);">AED. 143 instruments = broader UAE market than QWE. Median qty exactly 200 (whole lots, 0% fractional) — lot-based exchange trading.</td>
+            <td><span class="tag tg">App verified</span></td>
+          </tr>
+          <tr>
+            <td><strong>ASD</strong></td><td>Gold (XAUUSD) + Silver (XAGUSD)</td><td class="mono">USD</td><td class="mono">2</td>
+            <td style="font-size:10px;color:var(--t2);">Exactly 2 instruments. Instrument 1: med qty 0.21, med val $675 → implied $3,200/unit = Gold. Instrument 2: med qty 18, med val $1,000 → implied $55/unit = Silver. Price signals conclusive.</td>
+            <td><span class="tag tg">High</span></td>
+          </tr>
+          <tr>
+            <td><strong>JKL</strong></td><td>Wio Wealth (managed portfolios)</td><td class="mono">USD</td><td class="mono">1</td>
+            <td style="font-size:10px;color:var(--t2);">Single instrument. Every order qty = exactly 1.000 with no exceptions. Market orders only. 99.6% fill rate. Median $284. Subscription-style product — confirmed Wio Wealth launched Jun 2024.</td>
+            <td><span class="tag tg">High</span></td>
+          </tr>
+          <tr>
+            <td><strong>IOP</strong></td><td>Unknown</td><td class="mono">USD</td><td class="mono">46 traded</td>
+            <td style="font-size:10px;color:var(--t2);">46 instruments. No dedicated onboarding column — 99.3% of IOP traders share the RTY account. PPU from QUANTITY orders clusters tightly at $673–$824. Cannot be conclusively identified from data alone.</td>
+            <td><span class="tag ta">Low</span></td>
+          </tr>
+          <tr>
+            <td><strong>BNM</strong></td><td>US ETFs (best guess)</td><td class="mono">USD</td><td class="mono">56</td>
+            <td style="font-size:10px;color:var(--t2);">56 instruments. PPU from QUANTITY orders spans $3–$1,074 — consistent with a diverse ETF shelf (cheap leveraged/inverse ETFs at $3–$30, mid sector ETFs at $30–$300, expensive index ETFs at $300–$600). Wide spread across all price bands matches a broad ETF universe better than any other asset class.</td>
+            <td><span class="tag ta">Low</span></td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout cp" style="margin-top:8px;">Product codes are anonymised in the dataset. QWE and ZXC verified directly in the Wio app. ASD confirmed via price-per-unit analysis (Gold ~$3,192/oz, Silver ~$55/oz). BNM and IOP could not be conclusively identified — best guesses based on PPU analysis from QUANTITY orders only. Both carry low confidence.</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="stitle">Product account activation gap — opened but never traded</div>
+    <div class="card">
+      <table>
+        <thead><tr><th>Product</th><th>Likely asset</th><th>Accounts opened</th><th>Actually traded</th><th>Never traded</th><th>Gap %</th></tr></thead>
+        <tbody>
+          <tr><td><strong>BNM</strong></td><td>Bonds</td><td class="mono">2,138</td><td class="mono">430</td><td class="mono">1,708</td><td class="mono" style="color:var(--r)">79.9%</td></tr>
+          <tr><td><strong>JKL</strong></td><td>Wio Wealth</td><td class="mono">17,815</td><td class="mono">3,814</td><td class="mono">14,001</td><td class="mono" style="color:var(--r)">78.6%</td></tr>
+          <tr><td><strong>ZXC</strong></td><td>UAE Stocks (ADX+DFM)</td><td class="mono">23,816</td><td class="mono">9,255</td><td class="mono">14,561</td><td class="mono" style="color:var(--a)">61.1%</td></tr>
+          <tr><td><strong>QWE</strong></td><td>Crypto (Fuze)</td><td class="mono">23,953</td><td class="mono">10,885</td><td class="mono">13,068</td><td class="mono" style="color:var(--a)">54.6%</td></tr>
+          <tr><td><strong>ASD</strong></td><td>Gold &amp; Silver</td><td class="mono">17,705</td><td class="mono">9,582</td><td class="mono">8,123</td><td class="mono" style="color:var(--a)">45.9%</td></tr>
+          <tr><td><strong>RTY</strong></td><td>US Equities</td><td class="mono">36,160</td><td class="mono">24,839</td><td class="mono">11,321</td><td class="mono" style="color:var(--g)">31.3%</td></tr>
+        </tbody>
+      </table>
+      <div class="callout cp" style="margin-top:8px;">These are active Wio users who opened a product sub-account but placed zero trades in it. Accounts were opened — this represents an untapped activation opportunity within an already-onboarded base.</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="stitle">Instrument concentration — where does volume flow?</div>
+    <div class="card">
+      <table>
+        <thead><tr><th>Product</th><th>Total instruments</th><th>Top 5 = % of vol</th><th>Instruments for 80% vol</th><th>Character</th></tr></thead>
+        <tbody>
+          <tr><td><strong>RTY</strong></td><td class="mono">2,785</td><td class="mono">16.7%</td><td class="mono">140</td><td><span class="tag tg">Diversified</span></td></tr>
+          <tr><td><strong>QWE</strong></td><td class="mono">44</td><td class="mono">76.0%</td><td class="mono">6</td><td><span class="tag tr">Concentrated</span></td></tr>
+          <tr><td><strong>ZXC</strong></td><td class="mono">143</td><td class="mono">50.4%</td><td class="mono">25</td><td><span class="tag ta">Moderate</span></td></tr>
+        </tbody>
+      </table>
+      <div class="callout cp" style="margin-top:8px;">RTY users spread across 140 stocks — genuinely diversified. QWE volume concentrated in 6 assets, primarily BTC and ETH. ZXC volume moderately concentrated across 25 UAE stocks — consistent with market structure.</div>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="stitle">Asset class volume &amp; activity</div>
+    <div class="card">
+      <table>
+        <thead><tr><th>Product</th><th>Asset class</th><th>Volume</th><th>% of total</th><th>Users</th><th>Trades</th><th>Median trade</th><th>Fill rate</th><th>Commission</th></tr></thead>
+        <tbody>
+          <tr><td><strong>RTY</strong></td><td>US Equities</td><td class="mono">$4,074M</td><td class="mono" style="color:var(--p)">83.6%</td><td class="mono">24,839</td><td class="mono">614,801</td><td class="mono">$594</td><td class="mono" style="color:var(--g)">87.0%</td><td style="font-size:10px;color:var(--t2)">0.2% ($0.50 min, $4.95 max) + 5% VAT</td></tr>
+          <tr><td><strong>ASD</strong></td><td>Gold &amp; Silver</td><td class="mono">$444M</td><td class="mono">9.1%</td><td class="mono">9,582</td><td class="mono">83,694</td><td class="mono">$781</td><td class="mono" style="color:var(--a)">73.0%</td><td style="font-size:10px;color:var(--t2)">0.15%, $1 min + VAT</td></tr>
+          <tr><td><strong>QWE</strong></td><td>Crypto (Fuze OTC)</td><td class="mono">$191M</td><td class="mono">3.9%</td><td class="mono">10,885</td><td class="mono">95,758</td><td class="mono">$169</td><td class="mono" style="color:var(--g)">92.1%</td><td style="font-size:10px;color:var(--t2)">0.5% flat + OTC spread via Fuze</td></tr>
+          <tr><td><strong>ZXC</strong></td><td>UAE Stocks</td><td class="mono">$114M</td><td class="mono">2.3%</td><td class="mono">9,255</td><td class="mono">66,753</td><td class="mono">$213</td><td class="mono" style="color:var(--a)">65.8%</td><td style="font-size:10px;color:var(--t2)">Exchange fees apply — not confirmed</td></tr>
+          <tr><td><strong>JKL</strong></td><td>Wio Wealth</td><td class="mono">$38M</td><td class="mono">0.8%</td><td class="mono">3,814</td><td class="mono">20,209</td><td class="mono">$284</td><td class="mono" style="color:var(--g)">99.6%</td><td style="font-size:10px;color:var(--t2)">Free until Dec 2025. ~0.5% AUM fee expected after</td></tr>
+          <tr><td><strong>BNM</strong></td><td>US ETFs (best guess)</td><td class="mono">$5.3M</td><td class="mono">0.1%</td><td class="mono">430</td><td class="mono">998</td><td class="mono">$626</td><td class="mono" style="color:var(--g)">98.1%</td><td style="font-size:10px;color:var(--t2)">Not confirmed — low confidence product ID</td></tr>
+          <tr><td><strong>IOP</strong></td><td>Unknown</td><td class="mono">$5.0M</td><td class="mono">0.1%</td><td class="mono">271</td><td class="mono">796</td><td class="mono">$928</td><td class="mono" style="color:var(--g)">99.4%</td><td style="font-size:10px;color:var(--t2)">Not confirmed — low confidence product ID</td></tr>
+          <tr style="background:var(--bg3)"><td><strong>Total</strong></td><td></td><td class="mono"><strong>$4,872M</strong></td><td class="mono"><strong>100%</strong></td><td class="mono"><strong>35,605</strong></td><td class="mono"><strong>883,009</strong></td><td class="mono"><strong>$479</strong></td><td class="mono"><strong>84.2%</strong></td><td style="font-size:10px;color:var(--t2)">5-month window, Apr–Aug 2025</td></tr>
+        </tbody>
+      </table>
+      <div class="callout cp" style="margin-top:10px;">RTY dominates at 83.6% of total volume — significant single-product concentration. Crypto and metals combined represent only 13% of volume despite meaningful user bases. Commission rates stated where confirmed; ZXC exchange fees not verified.</div>
+    </div>
+  </div>
+  <div class="sec">
+    <div class="stitle">Crypto (QWE) — pricing and denomination friction</div>
+    <div class="card">
+      <div class="g2">
+        <div>
+          <div style="font-size:11px;color:var(--t2);margin-bottom:10px;">Monthly crypto volume trend</div>
+          <div class="br"><div class="bl">Apr 2025</div><div class="bw"><div class="bf" style="width:67%;background:var(--p)">$37.8M</div></div><div class="bv">22,219 trades</div></div>
+          <div class="br"><div class="bl">May 2025</div><div class="bw"><div class="bf" style="width:100%;background:var(--p)">$56.1M</div></div><div class="bv">26,251 trades</div></div>
+          <div class="br"><div class="bl">Jun 2025</div><div class="bw"><div class="bf" style="width:54%;background:var(--a)">$30.2M</div></div><div class="bv">17,857 trades</div></div>
+          <div class="br"><div class="bl">Jul 2025</div><div class="bw"><div class="bf" style="width:63%;background:var(--a)">$35.4M</div></div><div class="bv">14,453 trades</div></div>
+          <div class="br"><div class="bl">Aug 2025</div><div class="bw"><div class="bf" style="width:56%;background:var(--a)">$31.7M</div></div><div class="bv">14,978 trades</div></div>
+          <div class="callout ca" style="margin-top:8px;">Volume peaked in May then declined. Trade count fell from 26k to 15k over the window. 54.6% of QWE accounts have never placed a trade.</div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:10px;">Two friction points worth noting</div>
+          <div class="ins r" style="margin-bottom:8px;"><div class="ib"><strong>Cost transparency.</strong> QWE runs OTC via Fuze. Users pay 0.5% commission plus an embedded OTC spread — the effective all-in cost is not shown before order placement. Active crypto traders who have used other platforms will notice this.</div></div>
+          <div class="ins a" style="margin-bottom:8px;"><div class="ib"><strong>AED denomination.</strong> Crypto is a globally USD-priced asset class. Many users think, size, and plan positions in USD. Placing orders in AED without a USD view option creates friction — particularly for users who track portfolio performance in USD terms.</div></div>
+          <div class="ins p"><div class="ib"><strong>No leverage or perps.</strong> Active crypto traders want perpetual futures and margin. Without it, QWE serves as a spot accumulation product — suitable for passive holders but limited for active traders.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 4: TAKEAWAYS -->
+<div id="page-p4" class="page">
+  <div class="hero">
+    <div class="eyebrow">Part 1 · Point 4</div>
+    <div class="htitle">Key <em>takeaways</em></div>
+    <div class="hsub">Five data-driven observations ranked by commercial impact. Where the data leads, and what it suggests.</div>
+  </div>
+
+  <div class="sec">
+    <div class="stitle">Takeaway 1 — Power traders are the platform</div>
+    <div class="ins p"><div class="ih"><span class="tag tp">Revenue</span><div class="it">1,619 power traders generate 67.5% of all volume</div></div><div class="ib">Fewer than 1,700 users drive two thirds of the platform's trading activity. These are not casual investors — they average 251 trades over 5 months, trade two-way, and operate across multiple products. Every major brokerage (Zerodha in India, Sarwa and Robinhood in their respective markets) derives the majority of revenue from exactly this segment. Wio's priority should be deepening the product for these users — not just acquiring more occasional traders. A $20/month Pro subscription for full Depth of Market (DOM) access would create non-trading recurring revenue (NTRR) from the segment most likely to pay for it.</div></div>
+  </div>
+
+  <div class="sec">
+    <div class="stitle">Takeaway 2 — Pricing friction is suppressing activation in crypto and metals</div>
+    <div class="ins a"><div class="ih"><span class="tag ta">Activation</span><div class="it">54.6% of crypto accounts and ~46% of metals accounts have never traded</div></div><div class="ib">These users opened product sub-accounts — intent was expressed. Crypto (QWE) carries 0.5% commission plus an embedded OTC spread, with no pre-trade cost disclosure. Gold/Silver (ASD) has a $1 minimum fee — on a $100 position that is 1%, on a $200 position it is 0.5%. In an era of low-cost investing, these friction points are meaningful. Fixing pricing transparency and reviewing minimums is likely to improve activation without requiring any new user acquisition. Additionally, adding perpetuals and futures for both crypto and metals serves active traders who want leverage and hedging tools — and likely drives higher volume from the existing base.</div></div>
+  </div>
+
+  <div class="sec">
+    <div class="stitle">Takeaway 3 — Fixing pricing unlocks the untapped activation base</div>
+    <div class="ins a"><div class="ih"><span class="tag ta">Growth</span><div class="it">Account gaps across crypto and metals represent in-platform growth with zero acquisition cost</div></div><div class="ib">13,068 QWE accounts and 8,123 ASD accounts were opened but never traded. These users are already onboarded, already KYC-verified, and already inside the app. Converting even 10–15% of these dormant accounts to active traders — through better pricing, transparency, and product depth — is a material volume and revenue opportunity with no additional marketing spend required.</div></div>
+  </div>
+
+  <div class="sec">
+    <div class="stitle">Takeaway 4 — RTY concentration is a platform risk</div>
+    <div class="ins r"><div class="ih"><span class="tag tr">Risk</span><div class="it">83.6% of volume from a single asset class</div></div><div class="ib">RTY (US equities) accounts for $4.07B of $4.87B total volume. This is a single-product dependency — if US equity markets have a prolonged downturn, trading volumes fall materially. Historically, equity downturns drive rotation into gold, silver, and crypto — assets where Wio already has product infrastructure but underdeveloped volume. Strengthening crypto and metals offerings creates natural hedge against RTY concentration and captures rotation flows when they occur.</div></div>
+  </div>
+
+  <div class="sec">
+    <div class="stitle">Takeaway 5 — The addressable market is 25–35, digital-native, and underserved on execution tools</div>
+    <div class="ins p"><div class="ih"><span class="tag tp">Market</span><div class="it">US stocks, crypto, and metals will do the heavy lifting — derivatives complete the picture</div></div><div class="ib">The buy-side dominance (70.4% buy across the platform) confirms accumulation behaviour — this is a demographic building wealth, not speculating recklessly. But within that, 4,595 daily traders already trade two-way and behave like derivatives users. Options (puts for protection, calls for leverage) and futures (directional bets, hedging) are the natural next product layer. Power traders specifically need execution infrastructure: real charts, order depth, DOM, and ladder trading. Without it, sophisticated strategies get routed elsewhere.</div></div>
+  </div>
+
+  <div class="sec">
+    <div class="stitle">Data assumptions &amp; limitations</div>
+    <div class="card">
+      <ul style="font-size:11px;color:var(--t2);line-height:2;padding-left:14px;">
+        <li>Dataset covers Apr–Aug 2025 only (5 months). All conclusions are window-limited. Current user base is likely materially larger.</li>
+        <li>AED values normalised to USD at 3.67 throughout for cross-product comparisons.</li>
+        <li>Product codes anonymised — decoded by cross-referencing trade patterns and wioinvest.io product page.</li>
+        <li>Commission rates confirmed where verified in-app. ZXC exchange fees not confirmed.</li>
+        <li>BNM and IOP product identifications are best guesses — low confidence. Excluded from strategic recommendations.</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 5: ROADMAP -->
+<div id="page-p5" class="page">
+  <div class="hero">
+    <div class="eyebrow">Part 1 · Point 5</div>
+    <div class="htitle">Business <em>roadmap</em></div>
+    <div class="hsub">Three data-driven priorities for the next 12 months. Sequenced by speed of impact and complexity of execution.</div>
+  </div>
+
+  <div class="callout cp" style="margin-bottom:24px;font-size:12px;">One direction: <strong>Wio V1 is an investor platform. These priorities define V2 — a trader platform built on the user base already here.</strong></div>
+
+  <!-- PRIORITY 1 -->
+  <div class="sec">
+    <div class="stitle">Priority 1 — Pricing transparency · Quick win (0–6 weeks)</div>
+    <div class="card" style="border-left:3px solid var(--g);">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+        <div style="font-size:24px;font-weight:900;font-family:var(--mono);color:var(--g);line-height:1;">01</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--t);">Quick wins with immediate impact</div>
+          <div style="font-size:11px;color:var(--t2);">Low engineering effort. High activation impact. Ships in weeks, not months.</div>
+        </div>
+      </div>
+      <div style="display:grid;gap:7px;margin-bottom:12px;">
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--g);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Show real bid/ask on crypto before execution</div><div style="font-size:10px;color:var(--t2);">Users currently see no cost breakdown before placing a QWE order. Show the live bid, live ask, and spread as an explicit percentage at the order confirmation screen.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--g);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">USD toggle for crypto</div><div style="font-size:10px;color:var(--t2);">Allow users to view crypto prices, size orders, and see P&amp;L in USD instead of AED. Many users think and plan in USD for a globally USD-priced asset class. A simple currency toggle at the product level removes this friction.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--g);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Review gold/silver $1 minimum</div><div style="font-size:10px;color:var(--t2);">A $1 minimum on ASD means a $100 position costs 1% before any market movement. For a product targeting wealth accumulation, this is a meaningful barrier for smaller-ticket users.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--g);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">UAE Pass integration — investments-only signup track</div><div style="font-size:10px;color:var(--t2);">Current flow requires opening a full bank account to invest. Not all users want or need a Wio bank account. A UAE Pass-enabled investments-only onboarding track — similar to how Wio Savings is a separate product — removes the bank account prerequisite. Cross-sell the bank account later once the user is engaged.</div></div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div style="background:rgba(45,184,122,0.06);border:1px solid rgba(45,184,122,0.18);border-radius:7px;padding:10px 12px;">
+          <div style="font-size:9px;font-weight:700;color:var(--g);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Data signal</div>
+          <div style="font-size:10px;color:var(--t2);">54.6% of QWE accounts never traded · ~46% of ASD accounts never traded</div>
+        </div>
+        <div style="background:rgba(45,184,122,0.06);border:1px solid rgba(45,184,122,0.18);border-radius:7px;padding:10px 12px;">
+          <div style="font-size:9px;font-weight:700;color:var(--g);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Track</div>
+          <div style="font-size:10px;color:var(--t2);">Account gap reduction per product · activation rate · time-to-first-trade</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GROUNDWORK -->
+  <div class="sec">
+    <div class="stitle">Groundwork — regulatory, partner, and technical scoping (6 weeks–3 months)</div>
+    <div class="card" style="border-left:3px solid var(--a);">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+        <div style="font-size:24px;font-weight:900;font-family:var(--mono);color:var(--a);line-height:1;">02</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--t);">Lay the foundation before building</div>
+          <div style="font-size:11px;color:var(--t2);">F&amp;O cannot launch without a clearing partner, regulatory confirmation, and execution infrastructure. This window is for scoping — not building.</div>
+        </div>
+      </div>
+      <div style="display:grid;gap:7px;">
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--a);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Clearing partner identification</div><div style="font-size:10px;color:var(--t2);">Exchange-traded options require a US broker-dealer with options clearing capability. Identify, shortlist, and begin negotiations. Binary dependency — F&amp;O cannot launch without this.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--a);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Figure out regulatory requirements for F&amp;O</div><div style="font-size:10px;color:var(--t2);">Engage legal and compliance to confirm what SCA requires for exchange-traded derivatives. Do not assume — confirm before any public timeline is set.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--a);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">TradingView integration scoping</div><div style="font-size:10px;color:var(--t2);">TradingView has a documented broker integration API. Risk is timeline, not feasibility. Begin partnership discussions and technical scoping as a parallel workstream.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--a);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Depth of Market (DOM) and order book technical scoping</div><div style="font-size:10px;color:var(--t2);">DOM is an execution prerequisite for derivatives — power traders need stacked price levels and one-tap limit placement. Scope the build alongside the options chain, not after.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIORITY 2 -->
+  <div class="sec">
+    <div class="stitle">Priority 2 — Trading infrastructure + F&amp;O launch (3–12 months)</div>
+    <div class="card" style="border-left:3px solid var(--p);">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+        <div style="font-size:24px;font-weight:900;font-family:var(--mono);color:var(--p);line-height:1;">03</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--t);">Build the trader platform</div>
+          <div style="font-size:11px;color:var(--t2);">The largest build. Retains power traders and opens a new revenue stream.</div>
+        </div>
+      </div>
+      <div style="display:grid;gap:7px;margin-bottom:12px;">
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--p);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Exchange-traded options on US equities</div><div style="font-size:10px;color:var(--t2);">Full options chain with Greeks (delta, theta, vega, gamma), real bid/ask on every strike, ITM/ATM coding. $1.50/contract — 62% below the only comparable mobile-first competitor. Futures to follow.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--p);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Order book + Depth of Market (DOM)</div><div style="font-size:10px;color:var(--t2);">Top 5 bids and offers with depth bars. DOM (Depth of Market) shows stacked price levels with one-tap limit placement. Two views of the same market data — book for occasional traders, DOM for power traders.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--p);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">TradingView integration</div><div style="font-size:10px;color:var(--t2);">Professional charting is expected by anyone trading derivatives. TradingView integration runs as a parallel workstream — not sequential to the options build.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--p);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Pro subscription — $20/month</div><div style="font-size:10px;color:var(--t2);">Free tier: top 5 bids/offers. Pro tier ($20/month): full DOM access + advanced order types. Creates non-trading recurring revenue (NTRR). Power traders who live on the ladder will pay for it.</div></div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div style="background:rgba(107,78,255,0.08);border:1px solid var(--bord);border-radius:7px;padding:10px 12px;">
+          <div style="font-size:9px;font-weight:700;color:var(--p);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Data signal</div>
+          <div style="font-size:10px;color:var(--t2);">1,619 power traders = 67.5% of volume · 4,595 daily traders already trade two-way</div>
+        </div>
+        <div style="background:rgba(107,78,255,0.08);border:1px solid var(--bord);border-radius:7px;padding:10px 12px;">
+          <div style="font-size:9px;font-weight:700;color:var(--p);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Track</div>
+          <div style="font-size:10px;color:var(--t2);">Power trader retention · F&amp;O revenue contribution · Pro subscription take-up</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PRIORITY 3 -->
+  <div class="sec">
+    <div class="stitle">Priority 3 — Crypto + metals expansion (6–12 months, parallel to P2)</div>
+    <div class="card" style="border-left:3px solid var(--a);">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+        <div style="font-size:24px;font-weight:900;font-family:var(--mono);color:var(--a);line-height:1;">04</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:var(--t);">Reduce RTY concentration · Add uncorrelated revenue streams</div>
+          <div style="font-size:11px;color:var(--t2);">Runs in parallel with P2 from Month 6 once groundwork is confirmed.</div>
+        </div>
+      </div>
+      <div style="display:grid;gap:7px;margin-bottom:12px;">
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--a);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Crypto perpetuals via Fuze</div><div style="font-size:10px;color:var(--t2);">Figure out the regulatory path. Explore whether Fuze's existing structure covers perps before assuming a new licence is needed. Do not launch before path is confirmed. Same infrastructure already in place for spot.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--a);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Metals perpetuals and futures</div><div style="font-size:10px;color:var(--t2);">Gold and silver futures serve both hedgers (protecting equity positions) and speculators (leveraged directional bets). Explore regulatory path alongside crypto perps. In equity downturns, traders naturally rotate to metals — having deep offerings captures that flow.</div></div>
+        </div>
+      </div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div style="background:rgba(224,156,58,0.06);border:1px solid rgba(224,156,58,0.2);border-radius:7px;padding:10px 12px;">
+          <div style="font-size:9px;font-weight:700;color:var(--a);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Data signal</div>
+          <div style="font-size:10px;color:var(--t2);">RTY = 83.6% of volume · Crypto + metals = 13% despite meaningful user bases</div>
+        </div>
+        <div style="background:rgba(224,156,58,0.06);border:1px solid rgba(224,156,58,0.2);border-radius:7px;padding:10px 12px;">
+          <div style="font-size:9px;font-weight:700;color:var(--a);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Track</div>
+          <div style="font-size:10px;color:var(--t2);">RTY volume share decline · crypto + metals volume growth · account gap reduction</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout ca" style="font-size:11px;">P1 ships in weeks. Groundwork runs from weeks 6–12. P2 and P3 run in parallel from Month 6 — infrastructure first, crypto/metals expansion once foundation is confirmed.</div>
+</div>
+
+<!-- TAB 6: PRODUCT BETS -->
+<div id="page-p6" class="page">
+  <div class="hero">
+    <div class="eyebrow">Part 2 · Point 1</div>
+    <div class="htitle">Three <em>product bets</em></div>
+    <div class="hsub">Wio V1 is an investor platform — buy, hold, accumulate. These three bets define what V2 looks like: a trader platform built for the users already on it.</div>
+  </div>
+
+  <!-- BET 1 -->
+  <div class="sec">
+    <div class="stitle">Bet 1 — Build the trader platform (V1 → V2)</div>
+    <div class="card" style="border-left:3px solid var(--p);margin-bottom:10px;">
+      <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;">
+        <div style="font-size:28px;font-weight:900;font-family:var(--mono);color:var(--p);line-height:1;flex-shrink:0;">01</div>
+        <div style="flex:1;">
+          <div style="font-size:15px;font-weight:700;color:var(--t);margin-bottom:3px;">Exchange-Traded F&amp;O + Trader Infrastructure</div>
+          <div style="font-size:11px;color:var(--t2);">No UAE mobile-first broker has made the V1 → V2 transition yet. The market gap is open.</div>
+        </div>
+        <span class="tag tp">Lead Bet</span>
+      </div>
+
+      <div style="font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">The gap</div>
+      <div class="g3" style="margin-bottom:14px;">
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;">
+          <div style="font-size:9px;color:var(--t3);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:4px;">Only comparable competitor</div>
+          <div style="font-size:12px;font-weight:700;color:var(--t);margin-bottom:4px;">Sarwa: $4/contract</div>
+          <div style="font-size:10px;color:var(--t2);">Options only, no futures. $4/contract is steep for retail. IBKR has both but desktop-first — not built for the 25–35 UAE demographic.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;">
+          <div style="font-size:9px;color:var(--t3);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:4px;">What the data shows</div>
+          <div style="font-size:12px;font-weight:700;color:var(--t);margin-bottom:4px;">1,619 power traders = 67.5% of volume</div>
+          <div style="font-size:10px;color:var(--t2);">Already trading two-way, round-tripping positions. Traders using a cash equity product as a proxy for leverage and directional tools.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;">
+          <div style="font-size:9px;color:var(--t3);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:4px;">The opportunity</div>
+          <div style="font-size:12px;font-weight:700;color:var(--t);margin-bottom:4px;">Blue ocean in UAE mobile</div>
+          <div style="font-size:10px;color:var(--t2);">Zerodha, Robinhood, Sarwa — every major retail brokerage derives significant revenue from derivatives. The active trader base is already here. The product is missing.</div>
+        </div>
+      </div>
+
+      <div style="font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">What we recommend</div>
+      <div style="display:grid;gap:7px;margin-bottom:14px;">
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--p);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Exchange-traded options on US equities, futures to follow</div><div style="font-size:10px;color:var(--t2);">Full options chain with Greeks (Δ, Θ, Vega, Gamma), ITM/ATM coding, real bid/ask on every strike.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--p);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Order book + Depth of Market (DOM)</div><div style="font-size:10px;color:var(--t2);">Top 5 bids/offers standard. Full Depth of Market (DOM) — stacked levels, one-tap limit placement — Pro tier only.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--p);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">TradingView integration</div><div style="font-size:10px;color:var(--t2);">Professional charting is expected by anyone trading derivatives. Parallel workstream — not sequential to options build.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--p);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Pro subscription — $20/month for full DOM access</div><div style="font-size:10px;color:var(--t2);">Non-Trading Recurring Revenue (NTRR). Power traders who live on the ladder will pay for it. Exchange data costs (~$5/user) passed through at healthy margin.</div></div>
+        </div>
+      </div>
+
+      <div style="font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">Pricing</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <div style="flex:1;min-width:110px;background:rgba(107,78,255,0.1);border:1px solid var(--bord);border-radius:6px;padding:9px 12px;">
+          <div style="font-size:20px;font-weight:800;font-family:var(--mono);color:var(--v);">$1.50</div>
+          <div style="font-size:10px;color:var(--t);margin-top:2px;">Per options contract</div>
+          <div style="font-size:9px;color:var(--t3);margin-top:3px;">vs Sarwa $4.00 · 62% cheaper</div>
+        </div>
+        <div style="flex:1;min-width:110px;background:rgba(107,78,255,0.07);border:1px solid rgba(107,78,255,0.2);border-radius:6px;padding:9px 12px;">
+          <div style="font-size:20px;font-weight:800;font-family:var(--mono);color:var(--v);">$2.00</div>
+          <div style="font-size:10px;color:var(--t);margin-top:2px;">Per futures contract per side</div>
+          <div style="font-size:9px;color:var(--t3);margin-top:3px;">Higher notional — competitive with market rates</div>
+        </div>
+        <div style="flex:1;min-width:110px;background:var(--bg3);border:1px solid var(--bord2);border-radius:6px;padding:9px 12px;">
+          <div style="font-size:20px;font-weight:800;font-family:var(--mono);color:var(--v);">0.2%</div>
+          <div style="font-size:10px;color:var(--t);margin-top:2px;">Cash equities — unchanged</div>
+          <div style="font-size:9px;color:var(--t3);margin-top:3px;">$0.50 min · $4.95 max · +5% VAT</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BET 2 -->
+  <div class="sec">
+    <div class="stitle">Bet 2 — Fix pricing: crypto transparency + perps &amp; metals futures</div>
+    <div class="card" style="border-left:3px solid var(--a);">
+      <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;">
+        <div style="font-size:28px;font-weight:900;font-family:var(--mono);color:var(--a);line-height:1;flex-shrink:0;">02</div>
+        <div style="flex:1;">
+          <div style="font-size:15px;font-weight:700;color:var(--t);margin-bottom:3px;">Fix the cost structure — then expand the product</div>
+          <div style="font-size:11px;color:var(--t2);">54.6% of QWE accounts never traded. ~46% of ASD accounts never traded. Pricing and transparency can be meaningfully improved.</div>
+        </div>
+        <span class="tag ta">Bet 2</span>
+      </div>
+
+      <div style="font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">The problems</div>
+      <div class="g2" style="margin-bottom:14px;">
+        <div>
+          <div style="font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Crypto — cost and denomination</div>
+          <div class="ins r" style="margin-bottom:8px;">
+            <div class="ib"><strong>Pricing opacity.</strong> QWE charges 0.5% commission plus an embedded OTC spread via Fuze. Users see no cost breakdown before placing an order. Active crypto traders who have used other platforms will calculate the all-in cost and compare unfavourably.</div>
+          </div>
+          <div class="ins a" style="margin-bottom:0;">
+            <div class="ib"><strong>AED denomination friction.</strong> Crypto is a globally USD-priced asset class. Many users think, size, and plan positions in USD. Placing and tracking orders in AED without a USD view option creates unnecessary friction.</div>
+          </div>
+        </div>
+        <div>
+          <div style="font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Metals — minimum fee friction</div>
+          <div class="ins r" style="margin-bottom:0;">
+            <div class="ib"><strong>$1 minimum on ASD.</strong> A $100 position in gold costs $1 in commission — 1% before any market movement. A $200 position costs 0.5%. For a product targeting wealth accumulators with smaller ticket sizes, this is a meaningful barrier. The median ASD trade is $781, but small-ticket users are likely being priced out before they start.</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">The fix</div>
+      <div style="display:grid;gap:7px;margin-bottom:12px;">
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--g);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Show real bid/ask before execution</div><div style="font-size:10px;color:var(--t2);">Live bid, live ask, spread as explicit % — shown before order confirmation. Standard on every exchange.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--g);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">USD toggle for crypto</div><div style="font-size:10px;color:var(--t2);">Switch between AED and USD view — prices, order sizing, and P&amp;L all reflect selected currency. Simple, high-impact UX change.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--g);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Review gold/silver minimum fee structure</div><div style="font-size:10px;color:var(--t2);">$1 minimum on a $100 gold position = 1% cost before any market move. Reduce to lower barrier for small-ticket entry.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--v);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Add crypto perpetuals via Fuze — explore regulatory path</div><div style="font-size:10px;color:var(--t2);">Explore whether Fuze's existing structure covers perps. Do not launch before regulatory path is confirmed.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--v);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Add metals perpetuals and futures</div><div style="font-size:10px;color:var(--t2);">Serves hedgers (protecting equity positions) and speculators (leveraged directional bets). In equity downturns, traders rotate to metals — Wio should capture that flow.</div></div>
+        </div>
+      </div>
+
+      <div class="callout ca">Adding more crypto coins rarely drives sustainable growth — altcoin interest is cyclical and fades. BTC, ETH, and XRP cover the vast majority of retail demand. The opportunity is depth of offering — better pricing, better execution, perps — not a longer asset list.</div>
+    </div>
+  </div>
+
+  <!-- BET 3 -->
+  <div class="sec">
+    <div class="stitle">Bet 3 — Wio Academy</div>
+    <div class="card" style="border-left:3px solid var(--g);">
+      <div style="display:flex;align-items:flex-start;gap:12px;margin-bottom:14px;">
+        <div style="font-size:28px;font-weight:900;font-family:var(--mono);color:var(--g);line-height:1;flex-shrink:0;">03</div>
+        <div style="flex:1;">
+          <div style="font-size:15px;font-weight:700;color:var(--t);margin-bottom:3px;">Education as acquisition — a structural advantage no CFD broker can replicate</div>
+          <div style="font-size:11px;color:var(--t2);">The most underrated distribution channel in UAE retail investing. Nobody has done it honestly yet.</div>
+        </div>
+        <span class="tag tg">Bet 3</span>
+      </div>
+
+      <div style="font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">The structural insight</div>
+      <div style="background:rgba(45,184,122,0.06);border:1px solid rgba(45,184,122,0.18);border-radius:8px;padding:14px 16px;margin-bottom:12px;">
+        <div style="font-size:13px;font-weight:600;color:var(--t);line-height:1.65;margin-bottom:8px;">"CFD brokers educate clients to trade more — because they're the dealer. Wio educates clients to invest better — because they're the broker."</div>
+        <div style="font-size:11px;color:var(--t2);line-height:1.7;">CFD brokers profit when you lose — their education is always suspect. Wio earns commission on volume regardless of outcome. Aligned interests make Wio Academy trustworthy by default.</div>
+      </div>
+
+      <div class="g2" style="margin-bottom:12px;">
+        <div>
+          <div style="font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">The model — Zerodha Varsity</div>
+          <div style="font-size:11px;color:var(--t2);line-height:1.7;margin-bottom:6px;">Zerodha built India's largest retail broker on Varsity — free, honest education. People learned on Zerodha's content, then opened accounts. Content was the acquisition funnel. Binance Academy follows the same model.</div>
+        </div>
+        <div>
+          <div style="font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;">Why it works for Wio</div>
+          <div style="display:grid;gap:6px;">
+            <div style="background:var(--bg3);border-radius:6px;padding:9px 11px;">
+              <div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">F&amp;O preparation layer</div>
+              <div style="font-size:10px;color:var(--t2);">Academy is the preparation layer for F&amp;O — complete the module, understand the product, unlock the feature. Education and onboarding become one seamless flow.</div>
+            </div>
+            <div style="background:var(--bg3);border-radius:6px;padding:9px 11px;">
+              <div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Empty space in UAE</div>
+              <div style="font-size:10px;color:var(--t2);">Every UAE finance content creator talks about CFDs and crypto speculation. Nobody is producing honest content on equity investing, ETFs, or options as hedging tools. That space is largely empty.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout cg">Note: Wio Academy is a strategic market observation, not directly evidenced by the trade dataset. The evidence is Zerodha's growth trajectory and the absence of trusted cash-product education in the UAE market.</div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 7: PROTOTYPE -->
+<div id="page-p7" class="page">
+  <div class="hero">
+    <div class="eyebrow">Part 2 · Point 2</div>
+    <div class="htitle">F&amp;O customer journey <em>prototype</em></div>
+    <div class="hsub">7-step interactive prototype — from existing investor to first options trade. Click through each screen. All numbers are live and interactive.</div>
+  </div>
+
+<style>
+.p7-wrap{display:flex;gap:28px;align-items:flex-start;}
+.p7-phone-col{flex-shrink:0;}
+.p7-step-label{text-align:center;margin-bottom:10px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--t3);}
+.p7-step-label span{color:var(--v);}
+.p7-phone{width:360px;background:var(--bg);border:1.5px solid var(--bord);border-radius:34px;overflow:hidden;}
+.p7-phonebar{background:var(--bg2);padding:9px 16px 8px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--bord2);}
+.p7-topnav{background:var(--bg2);padding:10px 14px;display:flex;align-items:center;gap:8px;border-bottom:1px solid var(--bord2);}
+.p7-back{width:26px;height:26px;border-radius:7px;background:var(--bg3);border:1px solid var(--bord2);display:flex;align-items:center;justify-content:center;color:var(--v);font-size:13px;cursor:pointer;}
+.p7-navtitle{font-size:14px;font-weight:700;color:var(--t);}
+.p7-content{padding:12px 14px 20px;max-height:620px;overflow-y:auto;}
+.p7-screen{display:none;}
+.p7-screen.active{display:block;}
+
+/* STEP NAV */
+.p7-stepnav{display:flex;gap:5px;flex-wrap:wrap;justify-content:center;margin-top:10px;}
+.p7-stepbtn{font-size:10px;padding:4px 10px;border-radius:6px;background:var(--bg3);border:1px solid var(--bord2);color:var(--t2);cursor:pointer;}
+.p7-stepbtn.active{background:var(--pdim);border-color:var(--bord);color:var(--v);}
+
+/* RIGHT PANEL */
+.p7-right{flex:1;min-width:0;}
+.p7-journey{background:var(--bg2);border:1px solid var(--bord2);border-radius:10px;padding:16px;margin-bottom:14px;}
+.p7-journey-title{font-size:10px;font-weight:700;color:var(--t3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:12px;}
+.p7-jstep{display:flex;gap:10px;margin-bottom:10px;align-items:flex-start;}
+.p7-jstep:last-child{margin-bottom:0;}
+.p7-jnum{width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;flex-shrink:0;margin-top:1px;border:1px solid var(--bord2);color:var(--t3);background:var(--bg3);}
+.p7-jnum.done{background:rgba(45,184,122,0.15);border-color:rgba(45,184,122,0.3);color:var(--g);}
+.p7-jnum.cur{background:var(--p);border-color:var(--pd);color:#fff;}
+.p7-jtext{font-size:11px;color:var(--t2);line-height:1.6;}
+.p7-jtext strong{color:var(--t);font-weight:600;}
+
+.p7-infocard{background:var(--bg2);border:1px solid var(--bord2);border-radius:10px;padding:14px 16px;margin-bottom:10px;}
+.p7-infocard-title{font-size:11px;font-weight:700;color:var(--t);margin-bottom:8px;}
+.p7-irow{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--bord2);}
+.p7-irow:last-child{border-bottom:none;}
+.p7-ilabel{font-size:10px;color:var(--t2);}
+.p7-ival{font-size:10px;font-weight:600;font-family:var(--mono);color:var(--t);}
+
+/* PHONE COMPONENTS */
+.p7-hero-box{background:var(--bg3);border:1px solid var(--bord);border-radius:14px;padding:16px;margin-bottom:12px;}
+.p7-qa-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:12px;}
+.p7-qa{background:var(--bg2);border:1px solid var(--bord2);border-radius:11px;padding:12px 10px;cursor:pointer;}
+.p7-qa:hover{border-color:var(--bord);}
+.p7-qa.hl{border-color:var(--p);background:var(--pdim);}
+.p7-hold{display:flex;align-items:center;gap:8px;padding:8px 0;border-bottom:1px solid var(--bord2);}
+.p7-ticker{font-size:11px;font-weight:700;font-family:var(--mono);color:var(--v);width:38px;}
+.p7-btn{width:100%;padding:12px;border:none;border-radius:12px;color:#fff;font-size:13px;font-weight:700;cursor:pointer;font-family:var(--font);margin-bottom:7px;}
+.p7-btn2{width:100%;padding:10px;background:transparent;border:1px solid var(--bord);border-radius:12px;color:var(--v);font-size:12px;font-weight:500;cursor:pointer;font-family:var(--font);margin-bottom:7px;}
+.p7-shead{font-size:11px;font-weight:700;color:var(--t2);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:8px;}
+.p7-stepdots{display:flex;gap:5px;margin-bottom:12px;}
+.p7-dot{width:24px;height:4px;border-radius:2px;background:var(--bg4);}
+.p7-dot.done{background:var(--p);}
+.p7-dot.cur{background:var(--v);}
+.p7-warn{background:rgba(224,156,58,0.08);border:1px solid rgba(224,156,58,0.25);border-radius:9px;padding:9px 11px;margin-bottom:10px;}
+.p7-wt{font-size:11px;font-weight:600;color:var(--a);margin-bottom:2px;}
+.p7-wb{font-size:10px;color:var(--a);opacity:0.85;line-height:1.5;}
+.p7-qcard{background:var(--bg2);border:1px solid var(--bord2);border-radius:11px;padding:12px;margin-bottom:8px;}
+.p7-q{font-size:11px;font-weight:500;color:var(--t);margin-bottom:8px;line-height:1.5;}
+.p7-opt{display:flex;align-items:center;gap:8px;padding:7px 10px;border-radius:8px;border:1px solid var(--bord2);cursor:pointer;background:var(--bg3);margin-bottom:5px;}
+.p7-opt:last-child{margin-bottom:0;}
+.p7-opt.sel{border-color:var(--p);background:var(--pdim);}
+.p7-odot{width:13px;height:13px;border-radius:50%;border:2px solid var(--t3);flex-shrink:0;}
+.p7-opt.sel .p7-odot{border-color:var(--p);background:var(--p);}
+.p7-olabel{font-size:10px;color:var(--t2);}
+.p7-opt.sel .p7-olabel{color:var(--v);}
+
+/* CHAIN */
+.p7-expiry{display:flex;gap:5px;overflow-x:auto;margin-bottom:8px;}
+.p7-etab{font-size:10px;padding:4px 10px;border-radius:7px;border:1px solid var(--bord2);background:var(--bg3);color:var(--t2);cursor:pointer;white-space:nowrap;flex-shrink:0;}
+.p7-etab.active{background:var(--pdim);border-color:var(--p);color:var(--v);}
+.p7-chain-hdr{display:grid;grid-template-columns:1fr 38px 1fr;gap:2px;margin-bottom:4px;}
+.p7-ch-c{font-size:9px;font-weight:700;text-transform:uppercase;color:var(--g);text-align:center;padding:3px;background:rgba(45,184,122,0.08);border-radius:5px;}
+.p7-ch-s{font-size:9px;color:var(--t3);text-align:center;display:flex;align-items:center;justify-content:center;}
+.p7-ch-p{font-size:9px;font-weight:700;text-transform:uppercase;color:var(--r);text-align:center;padding:3px;background:rgba(224,85,85,0.08);border-radius:5px;}
+.p7-crow{display:grid;grid-template-columns:1fr 38px 1fr;gap:2px;margin-bottom:2px;align-items:center;}
+.p7-cc,.p7-pc{background:var(--bg2);border-radius:6px;padding:5px 6px;cursor:pointer;border:1px solid transparent;transition:border-color 0.12s;}
+.p7-cc:hover{border-color:rgba(45,184,122,0.5);}
+.p7-pc:hover{border-color:rgba(224,85,85,0.5);}
+.p7-cc.itm{background:rgba(45,184,122,0.05);}
+.p7-pc.itm{background:rgba(224,85,85,0.05);}
+.p7-sc{background:var(--bg3);border-radius:5px;padding:4px 2px;text-align:center;font-size:10px;font-weight:700;font-family:var(--mono);color:var(--t2);}
+.p7-sc.atm{background:var(--pdim);color:var(--v);}
+.p7-op{font-size:11px;font-weight:700;font-family:var(--mono);}
+.p7-og{font-size:8px;color:var(--t3);}
+.p7-og span{color:var(--t2);}
+
+/* BOOK PANEL */
+.p7-book{background:var(--bg3);border:1px solid var(--bord2);border-radius:10px;overflow:hidden;margin-bottom:10px;display:none;}
+.p7-book.vis{display:block;}
+.p7-book-hdr{padding:7px 10px;border-bottom:1px solid var(--bord2);display:flex;justify-content:space-between;align-items:center;}
+.p7-book-title{font-size:11px;font-weight:700;color:var(--t);}
+.p7-book-sub{font-size:9px;color:var(--t3);}
+.p7-book-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;}
+.p7-bside{border-bottom:1px solid var(--bord2);}
+.p7-bsidehdr{padding:5px 8px;font-size:9px;font-weight:700;text-transform:uppercase;border-bottom:1px solid var(--bord2);display:flex;justify-content:space-between;}
+.p7-bsidehdr.bid{color:var(--g);}
+.p7-bsidehdr.ask{color:var(--r);border-left:1px solid var(--bord2);}
+.p7-brow{display:grid;grid-template-columns:1fr 1fr;padding:4px 8px;position:relative;cursor:pointer;}
+.p7-brow:hover{background:var(--bg4);}
+.p7-arow{display:grid;grid-template-columns:1fr 1fr;padding:4px 8px;position:relative;cursor:pointer;border-left:1px solid var(--bord2);}
+.p7-arow:hover{background:var(--bg4);}
+.p7-dbar{position:absolute;top:0;bottom:0;left:0;pointer-events:none;}
+.p7-brow .p7-dbar{background:rgba(45,184,122,0.1);}
+.p7-arow .p7-dbar{background:rgba(224,85,85,0.1);}
+.p7-bp{font-size:10px;font-weight:600;font-family:var(--mono);position:relative;}
+.p7-brow .p7-bp{color:var(--g);}
+.p7-arow .p7-bp{color:var(--r);}
+.p7-bq{font-size:10px;font-family:var(--mono);color:var(--t2);text-align:right;position:relative;}
+.p7-spread{padding:4px 10px;display:flex;justify-content:space-between;background:var(--bg4);border-top:1px solid var(--bord2);border-bottom:1px solid var(--bord2);}
+.p7-spread span:first-child{font-size:9px;color:var(--t3);}
+.p7-spread span:last-child{font-size:9px;font-family:var(--mono);color:var(--a);font-weight:600;}
+
+/* ORDER TICKET */
+.p7-sidetabs{display:flex;gap:3px;background:var(--bg3);border-radius:9px;padding:3px;margin-bottom:10px;}
+.p7-stab{flex:1;padding:7px;text-align:center;font-size:13px;font-weight:700;border-radius:7px;cursor:pointer;border:none;font-family:var(--font);}
+.p7-stab.buy{background:rgba(45,184,122,0.15);color:var(--g);}
+.p7-stab.sell{background:rgba(224,85,85,0.15);color:var(--r);}
+.p7-stab.buy.active{background:var(--g);color:#fff;}
+.p7-stab.sell.active{background:var(--r);color:#fff;}
+.p7-field{margin-bottom:9px;}
+.p7-flabel{font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:0.06em;margin-bottom:3px;}
+.p7-finput{width:100%;padding:8px 11px;background:var(--bg3);border:1px solid var(--bord2);border-radius:9px;color:var(--t);font-size:13px;font-weight:600;font-family:var(--mono);}
+.p7-finput:focus{outline:none;border-color:var(--p);}
+.p7-summary{background:var(--bg3);border:1px solid var(--bord2);border-radius:9px;padding:9px 11px;margin-bottom:9px;}
+.p7-srow{display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px solid var(--bord2);}
+.p7-srow:last-child{border-bottom:none;}
+.p7-slabel{font-size:10px;color:var(--t2);}
+.p7-sval{font-size:10px;font-weight:600;font-family:var(--mono);}
+.p7-comm{background:var(--pdim);border:1px solid var(--bord);border-radius:8px;padding:6px 10px;margin-bottom:8px;display:flex;justify-content:space-between;}
+.p7-marginbox{background:rgba(224,156,58,0.08);border:1px solid rgba(224,156,58,0.25);border-radius:8px;padding:8px 10px;margin-bottom:8px;display:none;}
+.p7-marginbox.vis{display:block;}
+.p7-riskbox{background:rgba(224,85,85,0.08);border:1px solid rgba(224,85,85,0.28);border-radius:8px;padding:8px 10px;margin-bottom:8px;display:none;}
+.p7-riskbox.vis{display:block;}
+
+/* CONFIRM */
+.p7-confirm-icon{width:48px;height:48px;background:rgba(45,184,122,0.15);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:20px;}
+.p7-cdetail{background:var(--bg2);border:1px solid var(--bord2);border-radius:11px;padding:11px 13px;margin-bottom:10px;}
+.p7-crow2{display:flex;justify-content:space-between;padding:4px 0;border-bottom:1px solid var(--bord2);}
+.p7-crow2:last-child{border-bottom:none;}
+
+/* ACADEMY LINK */
+.p7-acadlink{background:var(--bg3);border:1px solid var(--bord);border-radius:11px;padding:11px 13px;display:flex;align-items:center;gap:10px;cursor:pointer;margin-bottom:7px;}
+.p7-acadlink:hover{border-color:var(--p);}
+.p7-alicon{width:34px;height:34px;border-radius:9px;background:var(--pdim);display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+
+/* PORTFOLIO */
+.p7-poscard{background:var(--bg2);border:1px solid var(--bord2);border-radius:11px;padding:11px 13px;margin-bottom:8px;cursor:pointer;}
+.p7-poscard:hover{border-color:var(--bord);}
+.p7-greek-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-top:8px;}
+.p7-gk{background:var(--bg3);border-radius:7px;padding:6px 8px;}
+.p7-gklabel{font-size:8px;color:var(--t3);text-transform:uppercase;letter-spacing:0.05em;}
+.p7-gkval{font-size:11px;font-weight:600;font-family:var(--mono);color:var(--t);}
+
+/* ACADEMY SCREENS */
+.p7-aclink{background:var(--bg2);border:1px solid var(--bord2);border-radius:11px;padding:11px 13px;display:flex;align-items:center;gap:10px;cursor:pointer;margin-bottom:7px;}
+.p7-aclink:hover{border-color:var(--bord);}
+.p7-acicon{width:36px;height:36px;border-radius:9px;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;}
+.p7-acbadge{font-size:8px;font-weight:700;padding:2px 5px;border-radius:3px;margin-left:5px;vertical-align:middle;}
+
+.p7-compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:10px;}
+.p7-cmpcard{background:var(--bg2);border:1px solid var(--bord2);border-radius:10px;overflow:hidden;}
+.p7-cmphead{padding:7px 9px;font-size:9px;font-weight:700;border-bottom:1px solid var(--bord2);}
+.p7-cmphead.lc{background:rgba(107,78,255,0.1);color:var(--v);}
+.p7-cmphead.sp{background:rgba(45,184,122,0.1);color:var(--g);}
+.p7-cmprow{display:flex;justify-content:space-between;padding:5px 9px;border-bottom:1px solid var(--bord2);}
+.p7-cmprow:last-child{border-bottom:none;}
+.p7-cmplabel{font-size:9px;color:var(--t3);}
+.p7-cmpval{font-size:10px;font-weight:600;font-family:var(--mono);}
+.p7-insight{background:rgba(45,184,122,0.07);border:1px solid rgba(45,184,122,0.2);border-radius:9px;padding:10px 12px;margin-bottom:9px;}
+.p7-irow2{display:flex;gap:7px;margin-bottom:5px;}
+.p7-irow2:last-child{margin-bottom:0;}
+.p7-pills{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px;}
+.p7-pill{font-size:9px;font-weight:600;padding:3px 7px;border-radius:4px;}
+</style>
+
+<div class="p7-wrap">
+
+  <!-- LEFT: PHONE -->
+  <div class="p7-phone-col">
+    <div class="p7-step-label">Step <span id="p7-step-label">1 of 7 — Home</span></div>
+    <div class="p7-phone">
+      <div class="p7-phonebar">
+        <span style="font-size:10px;color:var(--t2);font-family:var(--mono);">9:41 AM</span>
+        <span style="font-size:11px;font-weight:700;color:var(--t);">Wio Invest</span>
+        <span style="font-size:10px;color:var(--g);">● 82%</span>
+      </div>
+
+      <!-- S1: HOME -->
+      <div class="p7-screen active" id="p7s1">
+        <div class="p7-topnav" style="justify-content:center;">
+          <span style="font-size:13px;font-weight:700;color:var(--t);">Home</span>
+        </div>
+        <div class="p7-content">
+          <div class="p7-hero-box">
+            <div style="font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:4px;">Total portfolio</div>
+            <div style="font-size:26px;font-weight:700;font-family:var(--mono);color:var(--t);">$24,830.00</div>
+            <div style="font-size:11px;color:var(--g);margin-top:3px;">↑ +$340.20 today (1.39%)</div>
+          </div>
+          <div class="p7-shead">Quick actions</div>
+          <div class="p7-qa-grid">
+            <div class="p7-qa hl" onclick="p7goto(2)" style="cursor:pointer;">
+              <div style="font-size:16px;margin-bottom:5px;">📈</div>
+              <div style="font-size:11px;font-weight:600;color:var(--v);">Trade Options</div>
+              <div style="font-size:9px;color:var(--v);opacity:0.7;">New · F&amp;O</div>
+            </div>
+            <div class="p7-qa">
+              <div style="font-size:16px;margin-bottom:5px;">🏦</div>
+              <div style="font-size:11px;font-weight:600;color:var(--t);">Buy Stocks</div>
+              <div style="font-size:9px;color:var(--t3);">US Equities</div>
+            </div>
+            <div class="p7-qa">
+              <div style="font-size:16px;margin-bottom:5px;">₿</div>
+              <div style="font-size:11px;font-weight:600;color:var(--t);">Crypto</div>
+              <div style="font-size:9px;color:var(--t3);">44 assets</div>
+            </div>
+            <div class="p7-qa">
+              <div style="font-size:16px;margin-bottom:5px;">🥇</div>
+              <div style="font-size:11px;font-weight:600;color:var(--t);">Gold</div>
+              <div style="font-size:9px;color:var(--t3);">XAUUSD</div>
+            </div>
+          </div>
+          <div class="p7-shead">Holdings</div>
+          <div class="p7-hold"><div class="p7-ticker">AAPL</div><div style="flex:1;font-size:10px;color:var(--t2);">Apple · 8 shares</div><div style="text-align:right;"><div style="font-size:11px;font-weight:600;font-family:var(--mono);">$1,620</div><div style="font-size:9px;color:var(--g);">+4.2%</div></div></div>
+          <div class="p7-hold"><div class="p7-ticker">NVDA</div><div style="flex:1;font-size:10px;color:var(--t2);">Nvidia · 5 shares</div><div style="text-align:right;"><div style="font-size:11px;font-weight:600;font-family:var(--mono);">$672</div><div style="font-size:9px;color:var(--g);">+11.1%</div></div></div>
+          <div class="p7-hold" style="border:none;"><div class="p7-ticker">SPY</div><div style="flex:1;font-size:10px;color:var(--t2);">S&amp;P 500 ETF · 3</div><div style="text-align:right;"><div style="font-size:11px;font-weight:600;font-family:var(--mono);">$1,680</div><div style="font-size:9px;color:var(--r);">-0.8%</div></div></div>
+          <div style="background:var(--bg3);border:1px solid var(--bord);border-radius:12px;padding:13px;margin-top:12px;margin-bottom:10px;">
+            <div style="display:inline-block;font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;background:var(--p);color:#fff;margin-bottom:7px;text-transform:uppercase;letter-spacing:0.05em;">New</div>
+            <div style="font-size:13px;font-weight:700;color:var(--t);margin-bottom:3px;">Options &amp; Futures trading is live</div>
+            <div style="font-size:10px;color:var(--t2);line-height:1.6;margin-bottom:8px;">Trade exchange-listed options on US stocks. $1.50/contract flat. Real bid/ask.</div>
+            <div style="display:flex;gap:5px;flex-wrap:wrap;">
+              <span style="font-size:9px;padding:3px 7px;border-radius:5px;background:var(--bg4);border:1px solid var(--bord2);color:var(--t2);">Calls &amp; Puts</span>
+              <span style="font-size:9px;padding:3px 7px;border-radius:5px;background:var(--bg4);border:1px solid var(--bord2);color:var(--t2);">$1.50/contract</span>
+              <span style="font-size:9px;padding:3px 7px;border-radius:5px;background:var(--bg4);border:1px solid var(--bord2);color:var(--t2);">Exchange-traded</span>
+            </div>
+          </div>
+          <button class="p7-btn" style="background:var(--p);" onclick="p7goto(2)">Explore Options Trading →</button>
+        </div>
+      </div>
+
+      <!-- S2: DISCOVER / EDUCATION -->
+      <div class="p7-screen" id="p7s2">
+        <div class="p7-topnav">
+          <div class="p7-back" onclick="p7goto(1)">‹</div>
+          <div class="p7-navtitle">Options &amp; Futures</div>
+          <div style="margin-left:auto;font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;background:var(--pdim);color:var(--v);">New</div>
+        </div>
+        <div class="p7-content">
+          <div style="background:var(--bg3);border:1px solid var(--bord);border-radius:13px;padding:14px;margin-bottom:12px;">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:7px;">
+              <div style="font-size:10px;color:var(--v);font-weight:700;text-transform:uppercase;letter-spacing:0.07em;">What is an option?</div>
+              <button onclick="p7goto(&#39;ac&#39;)" style="font-size:10px;font-weight:600;color:var(--a);background:rgba(224,156,58,0.1);border:1px solid rgba(224,156,58,0.25);border-radius:5px;padding:3px 7px;cursor:pointer;font-family:var(--font);white-space:nowrap;">Learn more ↗</button>
+            </div>
+            <div style="font-size:11px;color:var(--t2);line-height:1.7;margin-bottom:10px;">An option gives the <strong style="color:var(--t)">holder the right, not the obligation</strong> to buy or sell an asset at a fixed price (the strike) before a set date (expiry). You pay a premium upfront — that's your maximum risk.</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;">
+              <div style="background:rgba(45,184,122,0.08);border:1px solid rgba(45,184,122,0.2);border-radius:9px;padding:9px;">
+                <div style="font-size:10px;font-weight:700;color:var(--g);margin-bottom:3px;">CALL holder</div>
+                <div style="font-size:10px;color:var(--t2);line-height:1.5;">Right to <strong style="color:var(--t)">buy</strong> the underlying at the strike. Profits when price rises.</div>
+              </div>
+              <div style="background:rgba(224,85,85,0.08);border:1px solid rgba(224,85,85,0.2);border-radius:9px;padding:9px;">
+                <div style="font-size:10px;font-weight:700;color:var(--r);margin-bottom:3px;">PUT holder</div>
+                <div style="font-size:10px;color:var(--t2);line-height:1.5;">Right to <strong style="color:var(--t)">sell</strong> the underlying at the strike. Profits when price falls.</div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-bottom:12px;">
+            <div class="p7-shead">Who uses options?</div>
+            <div style="display:flex;flex-direction:column;gap:5px;">
+              <div style="display:flex;align-items:flex-start;gap:9px;padding:9px 11px;background:var(--bg2);border:1px solid var(--bord2);border-radius:9px;">
+                <span style="font-size:13px;flex-shrink:0;">⚡</span>
+                <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:1px;">Traders</div><div style="font-size:10px;color:var(--t2);line-height:1.5;">Directional bets with defined risk. Control 100 shares for a fraction of the cost.</div></div>
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:9px;padding:9px 11px;background:var(--bg2);border:1px solid var(--bord2);border-radius:9px;">
+                <span style="font-size:13px;flex-shrink:0;">🛡️</span>
+                <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:1px;">Hedgers</div><div style="font-size:10px;color:var(--t2);line-height:1.5;">Buy puts to protect an existing portfolio without selling your position.</div></div>
+              </div>
+              <div style="display:flex;align-items:flex-start;gap:9px;padding:9px 11px;background:var(--bg2);border:1px solid var(--bord2);border-radius:9px;">
+                <span style="font-size:13px;flex-shrink:0;">💰</span>
+                <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:1px;">Income strategies</div><div style="font-size:10px;color:var(--t2);line-height:1.5;">Sell covered calls on stocks you hold. Generate regular premium income.</div></div>
+              </div>
+            </div>
+          </div>
+          <div style="margin-bottom:12px;">
+            <div class="p7-shead">Why Wio Options?</div>
+            <div style="display:flex;flex-direction:column;gap:5px;">
+              <div style="display:flex;align-items:center;gap:9px;padding:8px 11px;background:var(--bg2);border:1px solid var(--bord2);border-radius:9px;"><span style="color:var(--g);font-size:13px;">✓</span><span style="font-size:10px;color:var(--t2);">Traded on a <strong style="color:var(--t)">regulated US exchange</strong> — not against the broker</span></div>
+              <div style="display:flex;align-items:center;gap:9px;padding:8px 11px;background:var(--bg2);border:1px solid var(--bord2);border-radius:9px;"><span style="color:var(--g);font-size:13px;">✓</span><span style="font-size:10px;color:var(--t2);"><strong style="color:var(--v)">$1.50/contract</strong> flat — transparent, no hidden spread</span></div>
+              <div style="display:flex;align-items:center;gap:9px;padding:8px 11px;background:var(--bg2);border:1px solid var(--bord2);border-radius:9px;"><span style="color:var(--g);font-size:13px;">✓</span><span style="font-size:10px;color:var(--t2);">Full Greeks: Delta, Theta, Vega, Gamma live on every strike</span></div>
+              <div style="display:flex;align-items:center;gap:9px;padding:8px 11px;background:var(--bg2);border:1px solid var(--bord2);border-radius:9px;"><span style="color:var(--g);font-size:13px;">✓</span><span style="font-size:10px;color:var(--t2);">Real bid/ask on every strike — no mid-price fills</span></div>
+            </div>
+          </div>
+          <button class="p7-btn" style="background:var(--p);" onclick="p7goto(3)">Get Started — Complete Assessment →</button>
+          <button class="p7-btn2" onclick="p7goto(3)">I already know options</button>
+        </div>
+      </div>
+
+      <!-- S3: SCA TEST -->
+      <div class="p7-screen" id="p7s3">
+        <div class="p7-topnav">
+          <div class="p7-back" onclick="p7goto(2)">‹</div>
+          <div class="p7-navtitle">SCA Appropriateness Test</div>
+        </div>
+        <div class="p7-content">
+          <div class="p7-stepdots">
+            <div class="p7-dot done"></div><div class="p7-dot done"></div><div class="p7-dot cur"></div><div class="p7-dot"></div><div class="p7-dot"></div>
+          </div>
+          <div class="p7-warn">
+            <div class="p7-wt">A few quick questions</div>
+            <div class="p7-wb">Standard assessment to personalise your experience. Takes ~2 minutes.</div>
+          </div>
+          <div class="p7-qcard">
+            <div class="p7-q">How many years have you been trading financial instruments?</div>
+            <div class="p7-opt" onclick="p7sel(this)"><div class="p7-odot"></div><div class="p7-olabel">Less than 1 year</div></div>
+            <div class="p7-opt sel" onclick="p7sel(this)"><div class="p7-odot"></div><div class="p7-olabel">1–3 years</div></div>
+            <div class="p7-opt" onclick="p7sel(this)"><div class="p7-odot"></div><div class="p7-olabel">3–5 years</div></div>
+            <div class="p7-opt" onclick="p7sel(this)"><div class="p7-odot"></div><div class="p7-olabel">5+ years</div></div>
+          </div>
+          <div class="p7-qcard">
+            <div class="p7-q">Which best describes your understanding of options?</div>
+            <div class="p7-opt" onclick="p7sel(this)"><div class="p7-odot"></div><div class="p7-olabel">No experience</div></div>
+            <div class="p7-opt" onclick="p7sel(this)"><div class="p7-odot"></div><div class="p7-olabel">I understand the basics</div></div>
+            <div class="p7-opt sel" onclick="p7sel(this)"><div class="p7-odot"></div><div class="p7-olabel">I have traded options before</div></div>
+          </div>
+          <div class="p7-qcard">
+            <div class="p7-q">What is your annual income range (AED)?</div>
+            <div class="p7-opt" onclick="p7sel(this)"><div class="p7-odot"></div><div class="p7-olabel">Below 100,000</div></div>
+            <div class="p7-opt" onclick="p7sel(this)"><div class="p7-odot"></div><div class="p7-olabel">100,000 – 300,000</div></div>
+            <div class="p7-opt sel" onclick="p7sel(this)"><div class="p7-odot"></div><div class="p7-olabel">300,000+</div></div>
+          </div>
+          <button class="p7-btn" style="background:var(--g);" onclick="p7goto(4)">Continue to Options →</button>
+        </div>
+      </div>
+
+      <!-- S4: OPTIONS CHAIN -->
+      <div class="p7-screen" id="p7s4">
+        <div class="p7-topnav">
+          <div class="p7-back" onclick="p7goto(3)">‹</div>
+          <div class="p7-navtitle">AAPL Options</div>
+          <div style="margin-left:auto;font-size:10px;font-family:var(--mono);color:var(--g);font-weight:700;">$202.40 ↑1.8%</div>
+        </div>
+        <div class="p7-content">
+          <!-- Mini chart -->
+          <div style="background:var(--bg2);border:1px solid var(--bord2);border-radius:10px;overflow:hidden;margin-bottom:9px;">
+            <div style="padding:6px 10px;display:flex;align-items:center;gap:7px;border-bottom:1px solid var(--bord2);">
+              <span style="font-size:12px;font-weight:700;font-family:var(--mono);color:var(--t);">AAPL</span>
+              <span style="font-size:12px;font-weight:700;font-family:var(--mono);color:var(--g);">$202.40</span>
+              <span style="font-size:9px;color:var(--g);">↑ +$3.58</span>
+              <div style="display:flex;gap:2px;margin-left:auto;">
+                <span style="font-size:9px;padding:2px 5px;border-radius:3px;color:var(--t3);cursor:pointer;">1D</span>
+                <span style="font-size:9px;padding:2px 5px;border-radius:3px;background:var(--pdim);color:var(--v);">1W</span>
+                <span style="font-size:9px;padding:2px 5px;border-radius:3px;color:var(--t3);cursor:pointer;">1M</span>
+              </div>
+            </div>
+            <div style="height:80px;padding:5px 7px;">
+              <svg width="100%" height="100%" viewBox="0 0 320 70" preserveAspectRatio="none">
+                <defs><lineargradient id="p7cg" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#6B4EFF" stop-opacity="0.2"></stop><stop offset="100%" stop-color="#6B4EFF" stop-opacity="0"></stop></lineargradient></defs>
+                <line x1="0" y1="15" x2="320" y2="15" stroke="rgba(255,255,255,0.04)" stroke-width="1"></line>
+                <line x1="0" y1="35" x2="320" y2="35" stroke="rgba(255,255,255,0.04)" stroke-width="1"></line>
+                <line x1="0" y1="55" x2="320" y2="55" stroke="rgba(255,255,255,0.04)" stroke-width="1"></line>
+                <path d="M0,55 L40,48 L80,45 L120,37 L160,41 L200,28 L240,20 L280,13 L320,8" fill="none" stroke="#6B4EFF" stroke-width="1.8"></path>
+                <path d="M0,55 L40,48 L80,45 L120,37 L160,41 L200,28 L240,20 L280,13 L320,8 L320,70 L0,70Z" fill="url(#p7cg)"></path>
+                <text x="3" y="13" font-size="7" fill="#4A4670">210</text>
+                <text x="3" y="33" font-size="7" fill="#4A4670">202</text>
+                <text x="3" y="53" font-size="7" fill="#4A4670">194</text>
+              </svg>
+            </div>
+          </div>
+          <div class="p7-expiry">
+            <div class="p7-etab">Jul 18</div>
+            <div class="p7-etab active">Aug 15</div>
+            <div class="p7-etab">Sep 19</div>
+            <div class="p7-etab">Oct 17</div>
+          </div>
+          <div style="font-size:10px;color:var(--t3);margin-bottom:6px;">Tap any strike to see live bids &amp; offers</div>
+          <div class="p7-chain-hdr">
+            <div class="p7-ch-c">Calls</div>
+            <div class="p7-ch-s">Strike</div>
+            <div class="p7-ch-p">Puts</div>
+          </div>
+          <div class="p7-crow"><div class="p7-cc itm" onclick="p7book(this,&#39;CALL&#39;,195,&#39;12.40&#39;,&#39;12.70&#39;,&#39;.78&#39;,&#39;26%&#39;)"><div class="p7-op" style="color:var(--g)">12.40</div><div style="display:flex;gap:3px;margin-top:2px;"><span class="p7-og">Δ<span>.78</span></span><span class="p7-og" style="margin-left:3px">IV<span>26%</span></span></div></div><div class="p7-sc">195</div><div class="p7-pc" onclick="p7book(this,&#39;PUT&#39;,195,&#39;5.20&#39;,&#39;5.45&#39;,&#39;-.22&#39;,&#39;27%&#39;)"><div class="p7-op" style="color:var(--r)">5.20</div><div style="display:flex;gap:3px;margin-top:2px;"><span class="p7-og">Δ<span>-.22</span></span><span class="p7-og" style="margin-left:3px">IV<span>27%</span></span></div></div></div>
+          <div class="p7-crow"><div class="p7-cc itm" onclick="p7book(this,&#39;CALL&#39;,200,&#39;7.85&#39;,&#39;8.05&#39;,&#39;.64&#39;,&#39;25%&#39;)"><div class="p7-op" style="color:var(--g)">7.85</div><div style="display:flex;gap:3px;margin-top:2px;"><span class="p7-og">Δ<span>.64</span></span><span class="p7-og" style="margin-left:3px">IV<span>25%</span></span></div></div><div class="p7-sc atm">200 ◆</div><div class="p7-pc" onclick="p7book(this,&#39;PUT&#39;,200,&#39;6.90&#39;,&#39;7.10&#39;,&#39;-.37&#39;,&#39;25%&#39;)"><div class="p7-op" style="color:var(--r)">6.90</div><div style="display:flex;gap:3px;margin-top:2px;"><span class="p7-og">Δ<span>-.37</span></span><span class="p7-og" style="margin-left:3px">IV<span>25%</span></span></div></div></div>
+          <div class="p7-crow"><div class="p7-cc" onclick="p7book(this,&#39;CALL&#39;,205,&#39;4.20&#39;,&#39;4.40&#39;,&#39;.44&#39;,&#39;24%&#39;)"><div class="p7-op" style="color:var(--g)">4.20</div><div style="display:flex;gap:3px;margin-top:2px;"><span class="p7-og">Δ<span>.44</span></span><span class="p7-og" style="margin-left:3px">IV<span>24%</span></span></div></div><div class="p7-sc">205</div><div class="p7-pc itm" onclick="p7book(this,&#39;PUT&#39;,205,&#39;9.50&#39;,&#39;9.80&#39;,&#39;-.56&#39;,&#39;24%&#39;)"><div class="p7-op" style="color:var(--r)">9.50</div><div style="display:flex;gap:3px;margin-top:2px;"><span class="p7-og">Δ<span>-.56</span></span><span class="p7-og" style="margin-left:3px">IV<span>24%</span></span></div></div></div>
+          <div class="p7-crow"><div class="p7-cc" onclick="p7book(this,&#39;CALL&#39;,210,&#39;2.05&#39;,&#39;2.20&#39;,&#39;.28&#39;,&#39;23%&#39;)"><div class="p7-op" style="color:var(--g)">2.05</div><div style="display:flex;gap:3px;margin-top:2px;"><span class="p7-og">Δ<span>.28</span></span><span class="p7-og" style="margin-left:3px">IV<span>23%</span></span></div></div><div class="p7-sc">210</div><div class="p7-pc itm" onclick="p7book(this,&#39;PUT&#39;,210,&#39;13.40&#39;,&#39;13.70&#39;,&#39;-.72&#39;,&#39;23%&#39;)"><div class="p7-op" style="color:var(--r)">13.40</div><div style="display:flex;gap:3px;margin-top:2px;"><span class="p7-og">Δ<span>-.72</span></span><span class="p7-og" style="margin-left:3px">IV<span>23%</span></span></div></div></div>
+          <div style="margin-top:6px;display:flex;gap:8px;font-size:9px;margin-bottom:10px;">
+            <span style="color:rgba(45,184,122,0.5)">■</span><span style="color:var(--t3)">In-the-money</span>
+            <span style="color:var(--v);margin-left:5px">◆</span><span style="color:var(--t3)">ATM · $202.40</span>
+          </div>
+
+          <!-- BOOK PANEL -->
+          <div class="p7-book" id="p7-book">
+            <div class="p7-book-hdr">
+              <span class="p7-book-title" id="p7-book-title">AAPL $200 CALL · Aug 15</span>
+              <div style="display:flex;gap:2px;background:var(--bg4);border-radius:6px;padding:2px;">
+                <button id="p7-view-book" onclick="p7switchView(&#39;book&#39;)" style="font-size:9px;font-weight:600;padding:3px 8px;border-radius:4px;border:none;cursor:pointer;font-family:var(--font);background:var(--bg2);color:var(--v);">Book</button>
+                <button id="p7-view-ladder" onclick="p7switchView(&#39;ladder&#39;)" style="font-size:9px;font-weight:600;padding:3px 8px;border-radius:4px;border:none;cursor:pointer;font-family:var(--font);background:transparent;color:var(--t3);">Ladder</button>
+              </div>
+            </div>
+
+            <!-- BOOK VIEW -->
+            <div id="p7-view-book-panel">
+              <div class="p7-book-grid">
+                <div class="p7-bside">
+                  <div class="p7-bsidehdr bid"><span>Bids</span><span style="font-size:8px;color:var(--t3);font-weight:400">buyers</span></div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;padding:3px 8px;border-bottom:1px solid var(--bord2);"><span style="font-size:8px;color:var(--t3)">Price</span><span style="font-size:8px;color:var(--t3);text-align:right">Qty</span></div>
+                  <div id="p7-bids"></div>
+                </div>
+                <div class="p7-bside">
+                  <div class="p7-bsidehdr ask"><span>Offers</span><span style="font-size:8px;color:var(--t3);font-weight:400">sellers</span></div>
+                  <div style="display:grid;grid-template-columns:1fr 1fr;padding:3px 8px;border-bottom:1px solid var(--bord2);border-left:1px solid var(--bord2);"><span style="font-size:8px;color:var(--t3)">Price</span><span style="font-size:8px;color:var(--t3);text-align:right">Qty</span></div>
+                  <div id="p7-asks"></div>
+                </div>
+              </div>
+              <div class="p7-spread"><span id="p7-bestbid">Best bid: $7.85</span><span id="p7-spread-val">$0.20 spread</span><span id="p7-bestask">Best offer: $8.05</span></div>
+            </div>
+
+            <!-- LADDER VIEW -->
+            <div id="p7-view-ladder-panel" style="display:none;">
+              <div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:4px 8px;border-bottom:1px solid var(--bord2);background:var(--bg4);">
+                <span style="font-size:8px;color:var(--r);font-weight:600;text-transform:uppercase;">Offer qty</span>
+                <span style="font-size:8px;color:var(--t3);text-align:center;text-transform:uppercase;">Price</span>
+                <span style="font-size:8px;color:var(--g);font-weight:600;text-align:right;text-transform:uppercase;">Bid qty</span>
+              </div>
+              <div id="p7-ladder-rows"></div>
+              <div style="padding:4px 8px;background:var(--bg4);border-top:1px solid var(--bord2);display:flex;justify-content:center;">
+                <span style="font-size:9px;color:var(--t3);">Tap any price to set as limit</span>
+              </div>
+            </div>
+
+            <div style="padding:8px 10px;">
+              <button class="p7-btn" id="p7-book-btn" style="background:var(--g);margin-bottom:0;" onclick="p7goto(5)">Buy AAPL $200 Call →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- S5: ORDER TICKET -->
+      <div class="p7-screen" id="p7s5">
+        <div class="p7-topnav">
+          <div class="p7-back" onclick="p7goto(4)">‹</div>
+          <div class="p7-navtitle">Order Ticket</div>
+          <div style="margin-left:auto;font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;background:var(--pdim);color:var(--v);">AAPL Aug $200C</div>
+        </div>
+        <div class="p7-content">
+          <div class="p7-sidetabs">
+            <button class="p7-stab buy active" id="p7-tab-buy" onclick="p7setSide(&#39;buy&#39;)">Buy</button>
+            <button class="p7-stab sell" id="p7-tab-sell" onclick="p7setSide(&#39;sell&#39;)">Sell</button>
+          </div>
+          <div style="background:var(--bg2);border:1px solid var(--bord2);border-radius:10px;padding:9px 11px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center;">
+            <div><div style="font-size:12px;font-weight:700;font-family:var(--mono);color:var(--t);">AAPL 200 CALL</div><div style="font-size:9px;color:var(--t2);margin-top:1px;">Aug 15, 2025 · 100 shares / contract</div></div>
+            <div style="text-align:right;"><div style="font-size:13px;font-weight:700;font-family:var(--mono);" id="p7-inst-px">$8.05</div><div style="font-size:9px;color:var(--t3);" id="p7-inst-label">Ask price</div></div>
+          </div>
+          <div class="p7-field"><div class="p7-flabel">Order type</div><select class="p7-finput" style="font-size:11px;font-weight:500;"><option>Limit order</option><option>Market order</option><option>Stop limit</option></select></div>
+          <div class="p7-field"><div class="p7-flabel" id="p7-price-label">Limit price</div><input class="p7-finput" type="number" id="p7-lmt" value="8.00" step="0.05" oninput="p7recalc()"></div>
+          <div class="p7-field"><div class="p7-flabel">Contracts</div><input class="p7-finput" type="number" id="p7-qty" value="2" min="1" oninput="p7recalc()"></div>
+          <div class="p7-summary" id="p7-summary"><div class="p7-srow"><span class="p7-slabel">Premium (2 × $8.00 × 100)</span><span class="p7-sval" style="color:var(--r)">−$1,600.00</span></div><div class="p7-srow"><span class="p7-slabel">Max loss</span><span class="p7-sval" style="color:var(--r)">$1,600.00</span></div><div class="p7-srow"><span class="p7-slabel">Max profit</span><span class="p7-sval" style="color:var(--g)">Uncapped ↑</span></div><div class="p7-srow"><span class="p7-slabel">Break-even at expiry</span><span class="p7-sval" style="color:var(--v)">$208.00</span></div><div class="p7-srow" style="padding-top:6px;"><span class="p7-slabel" style="font-weight:600;color:var(--t)">Total debit</span><span class="p7-sval" style="color:var(--r);font-size:12px;font-weight:700">$1,603.00</span></div></div>
+          <div class="p7-comm"><span style="font-size:10px;color:var(--v);">Commission · <span id="p7-comm-det">2 × $1.50</span></span><span style="font-size:11px;font-weight:700;font-family:var(--mono);color:var(--v);" id="p7-comm-val">$3.00</span></div>
+          <div class="p7-marginbox" id="p7-margin">
+            <div style="font-size:10px;font-weight:600;color:var(--a);display:flex;justify-content:space-between;margin-bottom:3px;"><span>⚠ Margin requirement</span><span id="p7-margin-val" style="font-family:var(--mono);font-size:12px;"></span></div>
+            <div style="font-size:9px;color:var(--a);opacity:0.8;line-height:1.5;" id="p7-margin-sub"></div>
+          </div>
+          <div class="p7-riskbox" id="p7-risk">
+            <div style="font-size:11px;font-weight:700;color:var(--r);margin-bottom:3px;">⛔ Unlimited loss potential — naked call</div>
+            <div style="font-size:10px;color:var(--r);opacity:0.85;line-height:1.5;" id="p7-risk-body"></div>
+          </div>
+          <button class="p7-btn" id="p7-action-btn" style="background:var(--g);" onclick="p7goto(6)">Buy</button>
+        </div>
+      </div>
+
+      <!-- S6: CONFIRMATION -->
+      <div class="p7-screen" id="p7s6">
+        <div class="p7-topnav">
+          <div class="p7-back" onclick="p7goto(5)">‹</div>
+          <div class="p7-navtitle">Order Placed</div>
+        </div>
+        <div class="p7-content">
+          <div style="text-align:center;margin-bottom:14px;padding-top:8px;">
+            <div class="p7-confirm-icon">✓</div>
+            <div style="font-size:14px;font-weight:700;color:var(--t);margin-bottom:3px;">Order submitted</div>
+            <div style="font-size:10px;color:var(--t2);line-height:1.6;">Your limit order is live on the exchange.</div>
+          </div>
+          <div class="p7-cdetail">
+            <div class="p7-crow2"><span style="font-size:10px;color:var(--t2)">Instrument</span><span style="font-size:10px;font-weight:600;font-family:var(--mono);color:var(--t)">AAPL 200 CALL Aug 15</span></div>
+            <div class="p7-crow2"><span style="font-size:10px;color:var(--t2)">Side</span><span style="font-size:10px;font-weight:600;font-family:var(--mono);color:var(--g)">BUY</span></div>
+            <div class="p7-crow2"><span style="font-size:10px;color:var(--t2)">Contracts</span><span style="font-size:10px;font-weight:600;font-family:var(--mono);color:var(--t)">2</span></div>
+            <div class="p7-crow2"><span style="font-size:10px;color:var(--t2)">Limit price</span><span style="font-size:10px;font-weight:600;font-family:var(--mono);color:var(--t)">$8.00</span></div>
+            <div class="p7-crow2"><span style="font-size:10px;color:var(--t2)">Total premium</span><span style="font-size:10px;font-weight:600;font-family:var(--mono);color:var(--t)">$1,600.00</span></div>
+            <div class="p7-crow2"><span style="font-size:10px;color:var(--t2)">Commission</span><span style="font-size:10px;font-weight:600;font-family:var(--mono);color:var(--v)">$3.00 (2 × $1.50)</span></div>
+            <div class="p7-crow2"><span style="font-size:10px;font-weight:600;color:var(--t)">Total debit</span><span style="font-size:11px;font-weight:700;font-family:var(--mono);color:var(--t)">$1,603.00</span></div>
+            <div class="p7-crow2"><span style="font-size:10px;color:var(--t2)">Order ref</span><span style="font-size:10px;font-weight:600;font-family:var(--mono);color:var(--t)">#WIO-2847193</span></div>
+          </div>
+          <div class="p7-shead">Learn more</div>
+          <div class="p7-acadlink" onclick="p7goto(&#39;ac&#39;)">
+            <div class="p7-alicon">📚</div>
+            <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:1px;">Option strategies — Wio Academy</div><div style="font-size:10px;color:var(--t2);">Could a bull call spread have been cheaper?</div></div>
+            <div style="margin-left:auto;color:var(--v);font-size:14px;">›</div>
+          </div>
+          <div class="p7-acadlink" onclick="p7goto(&#39;ac&#39;)">
+            <div class="p7-alicon">🛡️</div>
+            <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:1px;">Hedging with puts</div><div style="font-size:10px;color:var(--t2);">Protect your AAPL position against a downturn.</div></div>
+            <div style="margin-left:auto;color:var(--v);font-size:14px;">›</div>
+          </div>
+          <button class="p7-btn" style="background:var(--p);margin-top:8px;" onclick="p7goto(7)">View portfolio →</button>
+          <button class="p7-btn2" onclick="p7goto(4)">Trade another option</button>
+        </div>
+      </div>
+
+      <!-- S7: PORTFOLIO -->
+      <div class="p7-screen" id="p7s7">
+        <div class="p7-topnav" style="justify-content:center;">
+          <span style="font-size:13px;font-weight:700;color:var(--t);">Portfolio</span>
+        </div>
+        <div class="p7-content">
+          <div style="background:var(--bg3);border:1px solid var(--bord);border-radius:13px;padding:14px;text-align:center;margin-bottom:12px;">
+            <div style="font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:5px;">Total portfolio</div>
+            <div style="font-size:24px;font-weight:700;font-family:var(--mono);color:var(--t);">$26,433.00</div>
+          </div>
+          <div class="p7-shead">Open options positions</div>
+          <div class="p7-poscard">
+            <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px;">
+              <div><div style="font-size:12px;font-weight:700;font-family:var(--mono);color:var(--t);">AAPL 200 CALL</div><div style="font-size:9px;color:var(--t2);margin-top:1px;">Aug 15 · 2 contracts</div></div>
+              <div style="text-align:right;"><span style="font-size:9px;font-weight:700;padding:2px 6px;border-radius:3px;background:rgba(45,184,122,0.15);color:var(--g);">CALL</span><div style="font-size:12px;font-weight:700;font-family:var(--mono);color:var(--g);margin-top:4px;">+$120</div><div style="font-size:9px;color:var(--t3);">Unrealised P&amp;L</div></div>
+            </div>
+            <div class="p7-greek-grid">
+              <div class="p7-gk"><div class="p7-gklabel">Delta</div><div class="p7-gkval">0.64</div></div>
+              <div class="p7-gk"><div class="p7-gklabel">Theta</div><div class="p7-gkval" style="color:var(--r)">-0.08</div></div>
+              <div class="p7-gk"><div class="p7-gklabel">Vega</div><div class="p7-gkval">0.22</div></div>
+              <div class="p7-gk"><div class="p7-gklabel">IV</div><div class="p7-gkval">25.4%</div></div>
+            </div>
+            <div style="margin-top:8px;padding-top:7px;border-top:1px solid var(--bord2);font-size:9px;color:var(--t3);">Entry $8.00 · Mkt $8.60 · Break-even $208.00</div>
+          </div>
+          <div class="p7-shead" style="margin-top:10px;">Equity positions</div>
+          <div class="p7-hold"><div class="p7-ticker">AAPL</div><div style="flex:1;font-size:10px;color:var(--t2);">Apple · 8 shares</div><div style="text-align:right;"><div style="font-size:11px;font-weight:600;font-family:var(--mono);">$1,620</div><div style="font-size:9px;color:var(--g);">+4.2%</div></div></div>
+          <div class="p7-hold" style="border:none;"><div class="p7-ticker">NVDA</div><div style="flex:1;font-size:10px;color:var(--t2);">Nvidia · 5 shares</div><div style="text-align:right;"><div style="font-size:11px;font-weight:600;font-family:var(--mono);">$672</div><div style="font-size:9px;color:var(--g);">+11.1%</div></div></div>
+          <div style="margin-top:12px;">
+            <button class="p7-btn" style="background:var(--p);" onclick="p7goto(4)">Trade more options</button>
+            <button class="p7-btn2" onclick="p7goto(1)">Back to home</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- ACADEMY HOME -->
+      <div class="p7-screen" id="p7sac">
+        <div class="p7-topnav">
+          <div class="p7-back" onclick="p7goto(6)">‹</div>
+          <div class="p7-navtitle">Wio Academy</div>
+        </div>
+        <div class="p7-content">
+          <div style="background:var(--bg3);border:1px solid var(--bord);border-radius:13px;padding:14px;margin-bottom:12px;">
+            <div style="display:inline-block;font-size:9px;font-weight:700;padding:2px 7px;border-radius:4px;background:var(--pdim);color:var(--v);margin-bottom:7px;text-transform:uppercase;letter-spacing:0.05em;">📚 Wio Academy</div>
+            <div style="font-size:14px;font-weight:700;color:var(--t);margin-bottom:4px;">Option strategies</div>
+            <div style="font-size:10px;color:var(--t2);line-height:1.6;">Free, unbiased guides from Wio's own team. We make money when you trade — not when you lose.</div>
+          </div>
+          <div class="p7-shead">Strategies</div>
+          <div class="p7-aclink" onclick="p7goto(&#39;spread&#39;)">
+            <div class="p7-acicon" style="background:rgba(45,184,122,0.12);">📈</div>
+            <div><div style="font-size:11px;font-weight:600;color:var(--t);">Bull call spread <span class="p7-acbadge" style="background:var(--pdim);color:var(--v);">Popular</span></div><div style="font-size:10px;color:var(--t3);">Bullish · Defined risk · Lower cost</div></div>
+            <div style="margin-left:auto;color:var(--v);font-size:14px;">›</div>
+          </div>
+          <div class="p7-aclink">
+            <div class="p7-acicon" style="background:rgba(107,78,255,0.12);">📉</div>
+            <div><div style="font-size:11px;font-weight:600;color:var(--t);">Bear put spread</div><div style="font-size:10px;color:var(--t3);">Bearish · Defined risk · Reduce put cost</div></div>
+            <div style="margin-left:auto;color:var(--v);font-size:14px;">›</div>
+          </div>
+          <div class="p7-aclink">
+            <div class="p7-acicon" style="background:rgba(224,156,58,0.12);">💰</div>
+            <div><div style="font-size:11px;font-weight:600;color:var(--t);">Covered call <span class="p7-acbadge" style="background:rgba(45,184,122,0.15);color:var(--g);">New</span></div><div style="font-size:10px;color:var(--t3);">Income · Own stock · Sell upside</div></div>
+            <div style="margin-left:auto;color:var(--v);font-size:14px;">›</div>
+          </div>
+          <div class="p7-aclink">
+            <div class="p7-acicon" style="background:rgba(224,85,85,0.12);">🛡️</div>
+            <div><div style="font-size:11px;font-weight:600;color:var(--t);">Protective put</div><div style="font-size:10px;color:var(--t3);">Hedge · Portfolio insurance</div></div>
+            <div style="margin-left:auto;color:var(--v);font-size:14px;">›</div>
+          </div>
+          <div class="p7-aclink">
+            <div class="p7-acicon" style="background:rgba(155,126,255,0.12);">↔️</div>
+            <div><div style="font-size:11px;font-weight:600;color:var(--t);">Long straddle</div><div style="font-size:10px;color:var(--t3);">Volatility play · Big move either way</div></div>
+            <div style="margin-left:auto;color:var(--v);font-size:14px;">›</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- BULL CALL SPREAD -->
+      <div class="p7-screen" id="p7sspread">
+        <div class="p7-topnav">
+          <div class="p7-back" onclick="p7goto(&#39;ac&#39;)">‹</div>
+          <div class="p7-navtitle">Bull Call Spread</div>
+        </div>
+        <div class="p7-content">
+          <div style="background:var(--bg3);border:1px solid var(--bord);border-radius:13px;padding:14px;margin-bottom:10px;">
+            <div style="font-size:14px;font-weight:700;color:var(--t);margin-bottom:4px;">Bull call spread</div>
+            <div style="font-size:10px;color:var(--t2);line-height:1.6;margin-bottom:9px;">Buy a call at a lower strike, sell a call at a higher strike — same expiry. Pay less upfront, cap your maximum profit.</div>
+            <div class="p7-pills">
+              <span class="p7-pill" style="background:rgba(45,184,122,0.15);color:var(--g);">Bullish</span>
+              <span class="p7-pill" style="background:var(--pdim);color:var(--v);">Defined risk</span>
+              <span class="p7-pill" style="background:rgba(224,156,58,0.15);color:var(--a);">Net debit</span>
+            </div>
+          </div>
+
+          <div class="p7-shead">Real example — AAPL Aug 15</div>
+          <div style="background:var(--bg3);border:1px solid var(--bord2);border-radius:9px;padding:10px 12px;margin-bottom:10px;">
+            <div style="font-size:10px;color:var(--t2);line-height:1.6;margin-bottom:8px;">You bought the <strong style="color:var(--t)">$200 call at $8.00</strong>. A spread would be: buy $200 call at $8.00, sell $210 call at $2.05.</div>
+            <div style="display:flex;gap:7px;align-items:center;">
+              <div style="flex:1;background:rgba(45,184,122,0.08);border:1px solid rgba(45,184,122,0.2);border-radius:7px;padding:8px 9px;">
+                <div style="font-size:9px;color:var(--g);font-weight:700;margin-bottom:3px;">BUY LEG</div>
+                <div style="font-size:11px;font-family:var(--mono);color:var(--t);font-weight:600;">$200 Call</div>
+                <div style="font-size:9px;color:var(--t2);">Pay $8.00</div>
+              </div>
+              <div style="color:var(--t3);font-size:14px;">+</div>
+              <div style="flex:1;background:rgba(224,85,85,0.08);border:1px solid rgba(224,85,85,0.2);border-radius:7px;padding:8px 9px;">
+                <div style="font-size:9px;color:var(--r);font-weight:700;margin-bottom:3px;">SELL LEG</div>
+                <div style="font-size:11px;font-family:var(--mono);color:var(--t);font-weight:600;">$210 Call</div>
+                <div style="font-size:9px;color:var(--t2);">Receive $2.05</div>
+              </div>
+            </div>
+            <div style="background:var(--bg4);border-radius:7px;padding:7px 10px;margin-top:8px;display:flex;justify-content:space-between;">
+              <span style="font-size:10px;color:var(--t2);">Net cost of spread</span>
+              <span style="font-size:12px;font-weight:700;font-family:var(--mono);color:var(--a);">$5.95 / contract</span>
+            </div>
+          </div>
+
+          <div class="p7-shead">Long call vs bull spread</div>
+          <div class="p7-compare-grid">
+            <div class="p7-cmpcard">
+              <div class="p7-cmphead lc">Long $200 call</div>
+              <div class="p7-cmprow"><span class="p7-cmplabel">Cost</span><span class="p7-cmpval" style="color:var(--r)">$8.00</span></div>
+              <div class="p7-cmprow"><span class="p7-cmplabel">Max loss</span><span class="p7-cmpval" style="color:var(--r)">$8.00</span></div>
+              <div class="p7-cmprow"><span class="p7-cmplabel">Max profit</span><span class="p7-cmpval" style="color:var(--g)">Uncapped</span></div>
+              <div class="p7-cmprow"><span class="p7-cmplabel">Break-even</span><span class="p7-cmpval" style="color:var(--v)">$208.00</span></div>
+              <div class="p7-cmprow"><span class="p7-cmplabel">Per contract</span><span class="p7-cmpval" style="color:var(--r)">$800</span></div>
+            </div>
+            <div class="p7-cmpcard">
+              <div class="p7-cmphead sp">Bull call spread</div>
+              <div class="p7-cmprow"><span class="p7-cmplabel">Cost</span><span class="p7-cmpval" style="color:var(--g)">$5.95</span></div>
+              <div class="p7-cmprow"><span class="p7-cmplabel">Max loss</span><span class="p7-cmpval" style="color:var(--a)">$5.95</span></div>
+              <div class="p7-cmprow"><span class="p7-cmplabel">Max profit</span><span class="p7-cmpval" style="color:var(--g)">$4.05 cap</span></div>
+              <div class="p7-cmprow"><span class="p7-cmplabel">Break-even</span><span class="p7-cmpval" style="color:var(--v)">$205.95</span></div>
+              <div class="p7-cmprow"><span class="p7-cmplabel">Per contract</span><span class="p7-cmpval" style="color:var(--g)">$595</span></div>
+            </div>
+          </div>
+
+          <!-- PAYOFF CHART -->
+          <div style="background:var(--bg2);border:1px solid var(--bord2);border-radius:10px;overflow:hidden;margin-bottom:10px;">
+            <div style="padding:7px 10px;border-bottom:1px solid var(--bord2);display:flex;justify-content:space-between;align-items:center;">
+              <span style="font-size:10px;font-weight:700;color:var(--t);text-transform:uppercase;letter-spacing:0.05em;">Payoff at expiry</span>
+              <div style="display:flex;gap:8px;">
+                <div style="display:flex;align-items:center;gap:3px;font-size:9px;color:var(--t2);"><div style="width:8px;height:2px;background:var(--v);border-radius:1px;"></div>Long call</div>
+                <div style="display:flex;align-items:center;gap:3px;font-size:9px;color:var(--t2);"><div style="width:8px;height:2px;background:var(--g);border-radius:1px;"></div>Spread</div>
+              </div>
+            </div>
+            <div style="padding:8px 10px 6px;">
+              <svg width="100%" height="120" viewBox="0 0 320 120">
+                <line x1="0" y1="60" x2="320" y2="60" stroke="rgba(255,255,255,0.08)" stroke-width="1" stroke-dasharray="4,3"></line>
+                <line x1="96" y1="10" x2="96" y2="110" stroke="rgba(107,78,255,0.25)" stroke-width="1" stroke-dasharray="3,3"></line>
+                <line x1="192" y1="10" x2="192" y2="110" stroke="rgba(107,78,255,0.15)" stroke-width="1" stroke-dasharray="3,3"></line>
+                <polyline points="0,140 96,140 156,60 320,0" fill="none" stroke="var(--v)" stroke-width="2"></polyline>
+                <polyline points="0,120 96,120 144,60 192,40 320,40" fill="none" stroke="var(--g)" stroke-width="2"></polyline>
+                <text x="90" y="116" font-size="7" fill="#4A4670" text-anchor="middle">$200</text>
+                <text x="186" y="116" font-size="7" fill="#4A4670" text-anchor="middle">$210</text>
+                <text x="3" y="58" font-size="7" fill="rgba(255,255,255,0.2)">$0</text>
+                <text x="3" y="38" font-size="7" fill="var(--g)">+$4</text>
+                <text x="3" y="88" font-size="7" fill="var(--r)">−$6</text>
+                <text x="245" y="35" font-size="7" fill="var(--g)">Capped</text>
+                <text x="248" y="12" font-size="7" fill="var(--v)">Uncapped</text>
+                <circle cx="156" cy="60" r="3" fill="var(--v)"></circle>
+                <circle cx="144" cy="60" r="3" fill="var(--g)"></circle>
+                <text x="158" y="55" font-size="7" fill="var(--v)">$208</text>
+                <text x="110" y="55" font-size="7" fill="var(--g)">$205.95</text>
+              </svg>
+            </div>
+          </div>
+
+          <div class="p7-insight">
+            <div style="font-size:11px;font-weight:700;color:var(--g);margin-bottom:7px;">Why the spread wins here</div>
+            <div class="p7-irow2"><span style="color:var(--g);flex-shrink:0;">✓</span><span style="font-size:10px;color:var(--t2);line-height:1.5;"><strong style="color:var(--t)">25.6% cheaper</strong> — $595 vs $800 per contract. Same directional bet.</span></div>
+            <div class="p7-irow2"><span style="color:var(--g);flex-shrink:0;">✓</span><span style="font-size:10px;color:var(--t2);line-height:1.5;"><strong style="color:var(--t)">Lower break-even</strong> — AAPL needs to reach $205.95, not $208.00.</span></div>
+            <div class="p7-irow2"><span style="color:var(--g);flex-shrink:0;">✓</span><span style="font-size:10px;color:var(--t2);line-height:1.5;"><strong style="color:var(--t)">Less theta decay</strong> — short leg offsets time decay on the long leg.</span></div>
+            <div class="p7-irow2" style="margin-bottom:0;"><span style="color:var(--a);flex-shrink:0;">↕</span><span style="font-size:10px;color:var(--t2);line-height:1.5;"><strong style="color:var(--t)">Trade-off</strong> — profit is capped at $210. If AAPL runs to $220, the long call wins.</span></div>
+          </div>
+
+          <button class="p7-btn" style="background:var(--p);" onclick="p7goto(4)">Try a bull call spread on AAPL →</button>
+          <button class="p7-btn2" onclick="p7goto(&#39;ac&#39;)">← Back to strategies</button>
+        </div>
+      </div>
+
+    </div><!-- /phone -->
+
+    <!-- STEP BUTTONS -->
+    <div class="p7-stepnav">
+      <button class="p7-stepbtn active" id="p7-sb1" onclick="p7goto(1)">① Home</button>
+      <button class="p7-stepbtn" id="p7-sb2" onclick="p7goto(2)">② Discover</button>
+      <button class="p7-stepbtn" id="p7-sb3" onclick="p7goto(3)">③ SCA Test</button>
+      <button class="p7-stepbtn" id="p7-sb4" onclick="p7goto(4)">④ Chain</button>
+      <button class="p7-stepbtn" id="p7-sb5" onclick="p7goto(5)">⑤ Order</button>
+      <button class="p7-stepbtn" id="p7-sb6" onclick="p7goto(6)">⑥ Confirm</button>
+      <button class="p7-stepbtn" id="p7-sb7" onclick="p7goto(7)">⑦ Portfolio</button>
+    </div>
+  </div><!-- /phone-col -->
+
+  <!-- RIGHT PANEL -->
+  <div class="p7-right">
+    <div class="p7-journey">
+      <div class="p7-journey-title">Customer journey — 7 steps</div>
+      <div class="p7-jstep"><div class="p7-jnum cur" id="p7jn1">1</div><div class="p7-jtext"><strong>Home screen</strong> — F&amp;O discovery banner surfaces the new product to existing investors already on the platform</div></div>
+      <div class="p7-jstep"><div class="p7-jnum" id="p7jn2">2</div><div class="p7-jtext"><strong>Education gate</strong> — Explain options, call/put holder definitions, three use cases. "Learn more" links to Wio Academy. Transparent $1.50 pricing shown upfront.</div></div>
+      <div class="p7-jstep"><div class="p7-jnum" id="p7jn3">3</div><div class="p7-jtext"><strong>SCA appropriateness test</strong> — Mandatory UAE regulatory requirement. Gated but frictionless — 3 questions, 2 minutes, unlocks F&amp;O access permanently.</div></div>
+      <div class="p7-jstep"><div class="p7-jnum" id="p7jn4">4</div><div class="p7-jtext"><strong>Options chain</strong> — Full chain with Greeks, ITM/ATM colour-coded. Tap any strike to load live top-5 bids and offers. Toggle between <strong>Order Book</strong> (side-by-side depth) and <strong>Price Ladder / DOM</strong> (stacked levels, one-tap limit placement). Underlying asset chart shown.</div></div>
+      <div class="p7-jstep"><div class="p7-jnum" id="p7jn5">5</div><div class="p7-jtext"><strong>Order ticket</strong> — Buy/Sell toggle. Live P&amp;L preview, break-even, max loss. Sell side shows margin requirement and uncapped loss warning. $1.50/contract shown explicitly.</div></div>
+      <div class="p7-jstep"><div class="p7-jnum" id="p7jn6">6</div><div class="p7-jtext"><strong>Confirmation</strong> — Full order receipt. Commission shown explicitly. Academy links surface the next learning step immediately after first trade.</div></div>
+      <div class="p7-jstep"><div class="p7-jnum" id="p7jn7">7</div><div class="p7-jtext"><strong>Portfolio</strong> — Live Greeks per open position (Δ, Θ, Vega, IV), unrealised P&amp;L, integrated with equity holdings in one view.</div></div>
+    </div>
+
+    <div class="p7-infocard">
+      <div class="p7-infocard-title">Pricing — transparent by design</div>
+      <div class="p7-irow"><span class="p7-ilabel">Options commission</span><span class="p7-ival" style="color:var(--v);">$1.50 / contract</span></div>
+      <div class="p7-irow"><span class="p7-ilabel">Futures commission</span><span class="p7-ival" style="color:var(--v);">$2.00 / contract / side</span></div>
+      <div class="p7-irow"><span class="p7-ilabel">Hidden spread</span><span class="p7-ival" style="color:var(--g);">None</span></div>
+      <div class="p7-irow"><span class="p7-ilabel">Clearing</span><span class="p7-ival">Regulated US exchange</span></div>
+      <div class="p7-irow"><span class="p7-ilabel">Equities partner</span><span class="p7-ival">DriveWealth</span></div>
+      <div class="p7-irow"><span class="p7-ilabel">F&amp;O partner</span><span class="p7-ival">US broker-dealer TBC</span></div>
+    </div>
+
+    <div class="p7-infocard">
+      <div class="p7-infocard-title">Order book &amp; price ladder</div>
+      <div style="font-size:11px;color:var(--t2);line-height:1.7;margin-bottom:8px;">Two views of the same market data — surfaced on strike selection. The book suits occasional traders who want to see depth before deciding. The ladder suits active and power traders who need one-tap limit placement at a specific level. Bundled with the F&amp;O launch in H1 — you cannot offer derivatives without execution tools.</div>
+      <div class="p7-irow"><span class="p7-ilabel">Order book</span><span class="p7-ival">Top 5 bids &amp; offers, depth bars</span></div>
+      <div class="p7-irow"><span class="p7-ilabel">Price ladder / DOM</span><span class="p7-ival">Stacked levels, tap to set limit</span></div>
+      <div class="p7-irow"><span class="p7-ilabel">Two views of same data</span><span class="p7-ival">Book + Ladder toggle</span></div>
+      <div class="p7-irow"><span class="p7-ilabel">Target users</span><span class="p7-ival">Active + Power traders</span></div>
+      <div class="p7-irow"><span class="p7-ilabel">Roadmap</span><span class="p7-ival" style="color:var(--p);">Bundled with F&amp;O launch</span></div>
+    </div>
+
+    <div class="p7-infocard">
+      <div class="p7-infocard-title">Wio Academy — Bet 3 in action</div>
+      <div style="font-size:11px;color:var(--t2);line-height:1.7;margin-bottom:8px;">The Academy link on the confirmation screen is where Bet 3 feeds Bet 1. A user who learns the bull call spread is more likely to trade options — and more likely to stay on Wio rather than switching to IBKR or a CFD broker.</div>
+      <div class="p7-irow"><span class="p7-ilabel">Education → activation funnel</span><span class="p7-ival" style="color:var(--g);">Built in</span></div>
+      <div class="p7-irow"><span class="p7-ilabel">CFD broker bias risk</span><span class="p7-ival" style="color:var(--g);">None — agency broker</span></div>
+      <div class="p7-irow"><span class="p7-ilabel">Zerodha Varsity model</span><span class="p7-ival" style="color:var(--v);">Referenced</span></div>
+    </div>
+
+  </div><!-- /right -->
+</div><!-- /p7-wrap -->
+
+<script>
+var p7cur = 1;
+var p7side = 'buy';
+var p7underlying = 202.40;
+var p7bookData = {
+  'CALL-200':{bids:[{p:'7.85',q:142},{p:'7.80',q:98},{p:'7.75',q:71},{p:'7.70',q:35},{p:'7.65',q:18}],asks:[{p:'8.05',q:116},{p:'8.10',q:80},{p:'8.15',q:52},{p:'8.20',q:28},{p:'8.25',q:12}]},
+  'PUT-200':{bids:[{p:'6.90',q:110},{p:'6.85',q:78},{p:'6.80',q:55},{p:'6.75',q:30},{p:'6.70',q:14}],asks:[{p:'7.10',q:100},{p:'7.15',q:72},{p:'7.20',q:50},{p:'7.25',q:25},{p:'7.30',q:11}]},
+  'CALL-205':{bids:[{p:'4.20',q:88},{p:'4.15',q:64},{p:'4.10',q:41},{p:'4.05',q:22},{p:'4.00',q:11}],asks:[{p:'4.40',q:95},{p:'4.45',q:70},{p:'4.50',q:48},{p:'4.55',q:30},{p:'4.60',q:14}]},
+  'PUT-205':{bids:[{p:'9.50',q:75},{p:'9.45',q:52},{p:'9.40',q:38},{p:'9.35',q:20},{p:'9.30',q:9}],asks:[{p:'9.80',q:82},{p:'9.85',q:60},{p:'9.90',q:40},{p:'9.95',q:22},{p:'10.00',q:10}]},
+  'CALL-195':{bids:[{p:'12.40',q:55},{p:'12.30',q:40},{p:'12.20',q:28},{p:'12.10',q:15},{p:'12.00',q:8}],asks:[{p:'12.70',q:60},{p:'12.80',q:44},{p:'12.90',q:30},{p:'13.00',q:18},{p:'13.10',q:9}]},
+  'PUT-195':{bids:[{p:'5.20',q:66},{p:'5.15',q:45},{p:'5.10',q:30},{p:'5.05',q:16},{p:'5.00',q:7}],asks:[{p:'5.45',q:70},{p:'5.50',q:50},{p:'5.55',q:33},{p:'5.60',q:18},{p:'5.65',q:8}]},
+  'CALL-210':{bids:[{p:'2.05',q:95},{p:'2.00',q:70},{p:'1.95',q:50},{p:'1.90',q:28},{p:'1.85',q:12}],asks:[{p:'2.20',q:100},{p:'2.25',q:74},{p:'2.30',q:52},{p:'2.35',q:30},{p:'2.40',q:14}]},
+  'PUT-210':{bids:[{p:'13.40',q:42},{p:'13.30',q:30},{p:'13.20',q:20},{p:'13.10',q:12},{p:'13.00',q:5}],asks:[{p:'13.70',q:40},{p:'13.80',q:28},{p:'13.90',q:18},{p:'14.00',q:10},{p:'14.10',q:4}]}
+};
+
+var p7labels = {1:'1 of 7 — Home',2:'2 of 7 — Discover',3:'3 of 7 — SCA Test',4:'4 of 7 — Options Chain',5:'5 of 7 — Order Ticket',6:'6 of 7 — Confirmation',7:'7 of 7 — Portfolio'};
+
+function p7goto(n) {
+  document.querySelectorAll('.p7-screen').forEach(function(s){s.classList.remove('active');});
+  document.querySelectorAll('.p7-stepbtn').forEach(function(b){b.classList.remove('active');});
+  if(n==='ac'){document.getElementById('p7sac').classList.add('active');document.getElementById('p7-step-label').textContent='Wio Academy';}
+  else if(n==='spread'){document.getElementById('p7sspread').classList.add('active');document.getElementById('p7-step-label').textContent='Academy — Bull Call Spread';}
+  else{
+    document.getElementById('p7s'+n).classList.add('active');
+    document.getElementById('p7-step-label').textContent=p7labels[n]||'';
+    var sb=document.getElementById('p7-sb'+n);if(sb)sb.classList.add('active');
+    for(var i=1;i<=7;i++){
+      var jn=document.getElementById('p7jn'+i);
+      if(!jn)continue;
+      if(i<n){jn.textContent='✓';jn.className='p7-jnum done';}
+      else if(i===n){jn.textContent=i;jn.className='p7-jnum cur';}
+      else{jn.textContent=i;jn.className='p7-jnum';}
+    }
+  }
+  p7cur=n;
+}
+
+function p7sel(el){
+  var parent=el.closest('.p7-qcard');
+  parent.querySelectorAll('.p7-opt').forEach(function(o){o.classList.remove('sel');});
+  el.classList.add('sel');
+}
+
+function p7book(el,type,strike,bid,ask,delta,iv){
+  document.querySelectorAll('.p7-cc,.p7-pc').forEach(function(c){c.style.borderColor='transparent';c.style.background='';});
+  var isCall=type==='CALL';
+  el.style.borderColor=isCall?'var(--g)':'var(--r)';
+  el.style.background=isCall?'rgba(45,184,122,0.1)':'rgba(224,85,85,0.1)';
+  var key=type+'-'+strike;
+  var d=p7bookData[key];
+  if(!d)return;
+  // store for ladder
+  p7currentType=type; p7currentStrike=strike;
+  p7currentBids=d.bids; p7currentAsks=d.asks;
+  // populate book view
+  var maxB=Math.max.apply(null,d.bids.map(function(r){return r.q;}));
+  var maxA=Math.max.apply(null,d.asks.map(function(r){return r.q;}));
+  var bH='',aH='';
+  d.bids.forEach(function(r){var w=Math.round(r.q/maxB*100);bH+='<div class="p7-brow"><div class="p7-dbar" style="width:'+w+'%"></div><div class="p7-bp" style="color:var(--g)">'+r.p+'</div><div class="p7-bq">'+r.q+'</div></div>';});
+  d.asks.forEach(function(r){var w=Math.round(r.q/maxA*100);aH+='<div class="p7-arow"><div class="p7-dbar" style="width:'+w+'%"></div><div class="p7-bp" style="color:var(--r)">'+r.p+'</div><div class="p7-bq">'+r.q+'</div></div>';});
+  document.getElementById('p7-bids').innerHTML=bH;
+  document.getElementById('p7-asks').innerHTML=aH;
+  document.getElementById('p7-book-title').textContent='AAPL $'+strike+' '+(isCall?'Call':'Put')+' · Aug 15';
+  var spread=(parseFloat(ask)-parseFloat(bid)).toFixed(2);
+  document.getElementById('p7-bestbid').textContent='Best bid: $'+bid;
+  document.getElementById('p7-bestask').textContent='Best offer: $'+ask;
+  document.getElementById('p7-spread-val').textContent='$'+spread+' spread';
+  document.getElementById('p7-book-btn').style.background=isCall?'var(--g)':'var(--r)';
+  document.getElementById('p7-book-btn').textContent=(isCall?'Buy':'Buy')+' AAPL $'+strike+' '+(isCall?'Call':'Put')+' →';
+  // reset to book view each time a new strike is selected
+  p7switchView('book');
+  document.getElementById('p7-book').classList.add('vis');
+}
+
+function p7fmt(n){return n.toLocaleString('en-US',{minimumFractionDigits:2,maximumFractionDigits:2});}
+function p7fmtI(n){return n.toLocaleString('en-US');}
+
+function p7setSide(s){
+  p7side=s;
+  document.getElementById('p7-tab-buy').classList.toggle('active',s==='buy');
+  document.getElementById('p7-tab-sell').classList.toggle('active',s==='sell');
+  if(s==='buy'){
+    document.getElementById('p7-inst-px').textContent='$8.05';
+    document.getElementById('p7-inst-px').style.color='var(--g)';
+    document.getElementById('p7-inst-label').textContent='Ask price';
+    document.getElementById('p7-lmt').value='8.00';
+  } else {
+    document.getElementById('p7-inst-px').textContent='$7.85';
+    document.getElementById('p7-inst-px').style.color='var(--r)';
+    document.getElementById('p7-inst-label').textContent='Bid price';
+    document.getElementById('p7-lmt').value='7.90';
+  }
+  p7recalc();
+}
+
+function p7recalc(){
+  var price=parseFloat(document.getElementById('p7-lmt').value)||0;
+  var qty=parseInt(document.getElementById('p7-qty').value)||1;
+  var premium=price*qty*100;
+  var comm=qty*1.50;
+  var strike=200;
+  document.getElementById('p7-comm-det').textContent=qty+' × $1.50';
+  document.getElementById('p7-comm-val').textContent='$'+comm.toFixed(2);
+  if(p7side==='buy'){
+    var total=premium+comm;
+    var be=(strike+price).toFixed(2);
+    document.getElementById('p7-summary').innerHTML=
+      '<div class="p7-srow"><span class="p7-slabel">Premium ('+qty+' × $'+price.toFixed(2)+' × 100)</span><span class="p7-sval" style="color:var(--r)">−$'+p7fmt(premium)+'</span></div>'+
+      '<div class="p7-srow"><span class="p7-slabel">Max loss</span><span class="p7-sval" style="color:var(--r)">$'+p7fmt(premium)+'</span></div>'+
+      '<div class="p7-srow"><span class="p7-slabel">Max profit</span><span class="p7-sval" style="color:var(--g)">Uncapped ↑</span></div>'+
+      '<div class="p7-srow"><span class="p7-slabel">Break-even at expiry</span><span class="p7-sval" style="color:var(--v)">$'+be+'</span></div>'+
+      '<div class="p7-srow" style="padding-top:6px;"><span class="p7-slabel" style="font-weight:600;color:var(--t)">Total debit</span><span class="p7-sval" style="color:var(--r);font-size:12px;font-weight:700">$'+p7fmt(total)+'</span></div>';
+    document.getElementById('p7-margin').classList.remove('vis');
+    document.getElementById('p7-risk').classList.remove('vis');
+    document.getElementById('p7-action-btn').textContent='Buy';
+    document.getElementById('p7-action-btn').style.background='var(--g)';
+  } else {
+    var credit=premium;
+    var net=credit-comm;
+    var be_sell=(strike+price).toFixed(2);
+    var mBase=Math.round(0.20*p7underlying*100*qty);
+    var margin=mBase+Math.round(credit);
+    document.getElementById('p7-summary').innerHTML=
+      '<div class="p7-srow"><span class="p7-slabel">Premium received ('+qty+' × $'+price.toFixed(2)+' × 100)</span><span class="p7-sval" style="color:var(--g)">+$'+p7fmt(credit)+'</span></div>'+
+      '<div class="p7-srow"><span class="p7-slabel">Max profit (premium only)</span><span class="p7-sval" style="color:var(--g)">$'+p7fmt(net)+'</span></div>'+
+      '<div class="p7-srow"><span class="p7-slabel">Max loss</span><span class="p7-sval" style="color:var(--r)">Uncapped ↑</span></div>'+
+      '<div class="p7-srow"><span class="p7-slabel">Break-even at expiry</span><span class="p7-sval" style="color:var(--v)">$'+be_sell+'</span></div>'+
+      '<div class="p7-srow" style="padding-top:6px;"><span class="p7-slabel" style="font-weight:600;color:var(--t)">Net credit</span><span class="p7-sval" style="color:var(--g);font-size:12px;font-weight:700">+$'+p7fmt(net)+'</span></div>';
+    document.getElementById('p7-margin').classList.add('vis');
+    document.getElementById('p7-margin-val').textContent='$'+p7fmtI(margin);
+    document.getElementById('p7-margin-sub').textContent='20% of underlying ($'+p7fmtI(mBase)+') + premium received ($'+p7fmtI(Math.round(credit))+'). Held as performance bond — returned when position is closed.';
+    document.getElementById('p7-risk').classList.add('vis');
+    document.getElementById('p7-risk-body').textContent='You receive $'+p7fmt(credit)+' upfront. If AAPL rises above $'+be_sell+' losses are uncapped. Margin of $'+p7fmtI(margin)+' may be insufficient in extreme moves.';
+    document.getElementById('p7-action-btn').textContent='Sell';
+    document.getElementById('p7-action-btn').style.background='var(--r)';
+  }
+}
+
+var p7currentView='book';
+var p7currentBids=[];
+var p7currentAsks=[];
+var p7currentStrike=200;
+var p7currentType='CALL';
+
+function p7switchView(v){
+  p7currentView=v;
+  var bp=document.getElementById('p7-view-book-panel');
+  var lp=document.getElementById('p7-view-ladder-panel');
+  var bb=document.getElementById('p7-view-book');
+  var lb=document.getElementById('p7-view-ladder');
+  if(!bp||!lp||!bb||!lb)return;
+  if(v==='book'){
+    bp.style.display='block';lp.style.display='none';
+    bb.style.background='var(--bg2)';bb.style.color='var(--v)';
+    lb.style.background='transparent';lb.style.color='var(--t3)';
+  } else {
+    bp.style.display='none';lp.style.display='block';
+    bb.style.background='transparent';bb.style.color='var(--t3)';
+    lb.style.background='var(--bg2)';lb.style.color='var(--v)';
+    p7renderLadder();
+  }
+}
+
+function p7renderLadder(){
+  if(!p7currentBids.length)return;
+  var rows=[];
+  p7currentAsks.slice().reverse().forEach(function(r){rows.push({price:parseFloat(r.p),askQty:r.q,bidQty:0});});
+  p7currentBids.forEach(function(r){rows.push({price:parseFloat(r.p),askQty:0,bidQty:r.q});});
+  var maxQ=Math.max.apply(null,rows.map(function(r){return Math.max(r.bidQty,r.askQty);}));
+  var midIdx=p7currentAsks.length;
+  var html='';
+  rows.forEach(function(row,idx){
+    var isAsk=row.askQty>0;
+    var isMid=idx===midIdx;
+    var barW=Math.round((Math.max(row.bidQty,row.askQty)/maxQ)*100);
+    var bg=isMid?'background:var(--bg4);border-top:1px solid var(--bord);border-bottom:1px solid var(--bord);':'';
+    html+='<div style="display:grid;grid-template-columns:1fr 1fr 1fr;padding:4px 8px;position:relative;cursor:pointer;'+bg+'" onclick="p7setLimit(\''+row.price.toFixed(2)+'\')">';
+    if(isAsk){
+      html+='<div style="position:absolute;top:0;bottom:0;left:0;width:'+barW+'%;background:rgba(224,85,85,0.1);pointer-events:none;"></div>';
+      html+='<div style="font-size:10px;font-weight:600;font-family:var(--mono);color:var(--r);position:relative;">'+row.askQty+'</div>';
+    } else {html+='<div></div>';}
+    html+='<div style="font-size:10px;font-weight:700;font-family:var(--mono);'+(isAsk?'color:var(--r)':'color:var(--g)')+';text-align:center;position:relative;">'+row.price.toFixed(2)+'</div>';
+    if(row.bidQty>0){
+      html+='<div style="position:absolute;top:0;bottom:0;right:0;width:'+barW+'%;background:rgba(45,184,122,0.1);pointer-events:none;"></div>';
+      html+='<div style="font-size:10px;font-weight:600;font-family:var(--mono);color:var(--g);text-align:right;position:relative;">'+row.bidQty+'</div>';
+    } else {html+='<div></div>';}
+    html+='</div>';
+  });
+  document.getElementById('p7-ladder-rows').innerHTML=html;
+}
+
+function p7setLimit(price){
+  var el=document.getElementById('p7-lmt');
+  if(el){el.value=price;p7recalc();}
+  p7goto(5);
+}
+
+p7recalc();
+</script>
+
+</div>
+
+<!-- TAB 8: CUSTOMER PROBLEM -->
+<div id="page-p8" class="page">
+  <div class="hero">
+    <div class="eyebrow">Part 2 · Point 3</div>
+    <div class="htitle">The customer <em>problem</em></div>
+    <div class="hsub">What gap does Wio V2 fill — and why now? Three layers of problem, each distinct.</div>
+  </div>
+
+  <div class="sec">
+    <div class="stitle">Problem 1 — The UAE trading market is built on CFD brokers</div>
+    <div class="card" style="border-left:3px solid var(--r);">
+      <div style="font-size:13px;font-weight:700;color:var(--t);margin-bottom:10px;">The dominant model is fundamentally conflicted</div>
+      <div style="display:grid;gap:7px;margin-bottom:12px;">
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--r);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div style="font-size:11px;color:var(--t2);line-height:1.6;">Hundreds of CFD brokers in UAE — ranging from well-regulated to barely regulated. Pricing set by a liquidity provider, not an exchange. No independent price discovery.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--r);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div style="font-size:11px;color:var(--t2);line-height:1.6;">Broker is the counterparty — when you lose, they profit. Incentives misaligned by design. Withdrawal issues common with less regulated operators.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--r);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div style="font-size:11px;color:var(--t2);line-height:1.6;">Leverage up to 1:1000 is commonplace. OTC derivatives — not exchange-cleared or exchange-regulated. A gray area many retail traders don't fully understand when they sign up.</div>
+        </div>
+      </div>
+      <div class="callout cr">This is the dominant model not because it serves traders well — but because it is profitable for brokers.</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="stitle">Problem 2 — The cash and exchange-traded gap is almost entirely unfilled</div>
+    <div class="card" style="border-left:3px solid var(--a);">
+      <div style="font-size:13px;font-weight:700;color:var(--t);margin-bottom:10px;">For traders who want regulated, exchange-traded, transparent products on mobile — there is almost no one</div>
+      <div class="g2" style="margin-bottom:12px;">
+        <div style="background:var(--bg3);border-radius:6px;padding:12px 14px;">
+          <div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:4px;">IBKR</div>
+          <div style="font-size:10px;color:var(--t2);line-height:1.6;">Desktop-first, complex, built for institutional-leaning users. Not designed for the 25–35 UAE demographic.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:12px 14px;">
+          <div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:4px;">The only mobile-first cash broker</div>
+          <div style="font-size:10px;color:var(--t2);line-height:1.6;">One meaningful mobile-first cash broker in this space. Limited charting, no order depth or DOM during execution, steep options pricing. One player — that is a gap, not a market.</div>
+        </div>
+      </div>
+      <div style="background:rgba(107,78,255,0.08);border:1px solid var(--bord);border-radius:8px;padding:14px 16px;">
+        <div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:6px;">What the underserved trader actually wants</div>
+        <div style="font-size:11px;color:var(--t2);line-height:1.7;">Mobile-first. Clean UX. Real charts, order depth, DOM. Transparent pricing. Affordable commissions. Exchange-traded. Built for someone done with CFD brokers but not ready for IBKR. This is Wio V2.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="stitle">Problem 3 — Onboarding friction is limiting top-of-funnel growth</div>
+    <div class="card" style="border-left:3px solid var(--v);">
+      <div style="font-size:13px;font-weight:700;color:var(--t);margin-bottom:10px;">A banking-first flow creates friction for investment-only users</div>
+      <div style="display:grid;gap:7px;margin-bottom:12px;">
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--v);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div style="font-size:11px;color:var(--t2);line-height:1.6;">Wio's current model requires opening a bank account to invest. Central bank regulation means heavy KYC, multiple questionnaires, no UAE Pass integration. Not everyone who wants to invest wants or needs a Wio bank account — many already bank elsewhere.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--v);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div style="font-size:11px;color:var(--t2);line-height:1.6;">The result: a signup process that can take significantly longer than it needs to. In 2026, leading investment platforms integrate UAE Pass — KYC is largely solved, and signup can be completed in minutes. This is increasingly table stakes.</div>
+        </div>
+      </div>
+      <div style="font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:8px;">A potential approach worth considering</div>
+      <div style="display:grid;gap:7px;margin-bottom:10px;">
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--g);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div style="font-size:11px;color:var(--t2);line-height:1.6;"><strong style="color:var(--t)">Wio Invest as a separate onboarding track within the existing app</strong> — similar to how Wio Savings is a distinct product. UAE Pass integration for investments-only signup. No bank account required upfront. Regulatory questionnaires are unavoidable but could be sequenced better — don't front-load everything before the user sees any value.</div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--g);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div style="font-size:11px;color:var(--t2);line-height:1.6;">The bank account relationship could be introduced later in the journey — once the user is invested, engaged, and trusts the platform. A natural cross-sell rather than a prerequisite.</div>
+        </div>
+      </div>
+      <div class="callout cp">This observation is based on personal experience going through the signup process — not derived from the dataset. The dataset shows strong activation within onboarded users; the opportunity is growing the top of that funnel.</div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 9: BUSINESS CASE -->
+<div id="page-p9" class="page">
+  <div class="hero">
+    <div class="eyebrow">Part 2 · Point 4</div>
+    <div class="htitle">Business case &amp; <em>P&amp;L impact</em></div>
+    <div class="hsub">Indicative revenue opportunity from the three product bets. All assumptions stated explicitly. Existing platform financials not available in dataset — this represents net-new opportunity only.</div>
+  </div>
+
+  <div class="sec">
+    <div class="stitle">Revenue opportunity — Year 1</div>
+    <div class="card" style="padding:0;overflow:hidden;">
+      <table>
+        <thead>
+          <tr><th>Revenue stream</th><th>Conservative</th><th>Base case</th><th>Upside</th><th>Note</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:600;color:var(--t);">Options ¹</td>
+            <td class="mono" style="color:var(--g);">$216K</td>
+            <td class="mono" style="color:var(--g);">$390K</td>
+            <td class="mono" style="color:var(--g);">$720K</td>
+            <td style="color:var(--t2);">320 / 500 / 800 power traders @ 450–600 contracts/year @ $1.50</td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;color:var(--t);">Futures ²</td>
+            <td class="mono" style="color:var(--g);">$40K</td>
+            <td class="mono" style="color:var(--g);">$80K</td>
+            <td class="mono" style="color:var(--g);">$175K</td>
+            <td style="color:var(--t2);">100 / 200 / 350 traders @ 200–250 contracts/year @ $2.00</td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;color:var(--t);">Pro subscription ³</td>
+            <td class="mono" style="color:var(--g);">$39K</td>
+            <td class="mono" style="color:var(--g);">$78K</td>
+            <td class="mono" style="color:var(--g);">$136K</td>
+            <td style="color:var(--t2);">10% / 20% / 35% of 1,619 power traders @ $20/month</td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;color:var(--t);">Crypto volume uplift ⁴</td>
+            <td class="mono" style="color:var(--g);">$230K</td>
+            <td class="mono" style="color:var(--g);">$344K</td>
+            <td class="mono" style="color:var(--g);">$574K</td>
+            <td style="color:var(--t2);">10% / 15% / 25% volume growth from pricing fix &amp; USD toggle</td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;color:var(--t);">Metals volume uplift ⁵</td>
+            <td class="mono" style="color:var(--g);">$160K</td>
+            <td class="mono" style="color:var(--g);">$239K</td>
+            <td class="mono" style="color:var(--g);">$399K</td>
+            <td style="color:var(--t2);">10% / 15% / 25% volume growth from fee structure review &amp; perps</td>
+          </tr>
+          <tr style="background:var(--bg3);">
+            <td style="font-weight:700;color:var(--t);">Total Y1 net-new revenue</td>
+            <td class="mono" style="color:var(--g);font-weight:700;">$685K</td>
+            <td class="mono" style="color:var(--g);font-weight:700;">$1.13M</td>
+            <td class="mono" style="color:var(--g);font-weight:700;">$2.0M</td>
+            <td style="color:var(--t2);">Zero cannibalisation of existing equity book</td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;color:var(--t);">Total Y2 (+50% growth)</td>
+            <td class="mono" style="color:var(--g);font-weight:600;">$1.03M</td>
+            <td class="mono" style="color:var(--g);font-weight:600;">$1.70M</td>
+            <td class="mono" style="color:var(--g);font-weight:600;">$3.0M</td>
+            <td style="color:var(--t2);">User base compounds · product matures · no rebuild cost</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="stitle">Footnotes — full derivation</div>
+    <div class="card">
+      <div style="display:grid;gap:10px;font-size:11px;color:var(--t2);line-height:1.7;">
+        <div><span style="color:var(--v);font-weight:600;">¹ Options:</span> Power traders = 1,619. Conservative: 20% adoption (320 traders) × 450 contracts/year × $1.50 = $216K. Base: 30% (500 traders) × 520 contracts × $1.50 = $390K. Upside: 50% (800 traders) × 600 contracts × $1.50 = $720K. Contract frequency assumes 2 sessions/week, 3–5 contracts per session.</div>
+        <div><span style="color:var(--v);font-weight:600;">² Futures:</span> Conservative: 100 traders × 200 contracts/year × $2.00 = $40K. Base: 200 × 200 × $2.00 = $80K. Upside: 350 × 250 × $2.00 = $175K. Futures launched after options — smaller initial base, higher notional per contract.</div>
+        <div><span style="color:var(--v);font-weight:600;">³ Pro subscription:</span> Base = 1,619 power traders. Conservative: 10% take-up (162) × $20 × 12 = $39K. Base: 20% (324) × $20 × 12 = $78K. Upside: 35% (567) × $20 × 12 = $136K.</div>
+        <div><span style="color:var(--v);font-weight:600;">⁴ Crypto uplift:</span> Annualised QWE volume = $191.2M × 12/5 = $459M. Commission = 0.5% flat. Conservative: 10% volume growth from pricing fix and USD toggle → $45.9M × 0.5% = $230K. Base: 15% → $68.9M × 0.5% = $344K. Upside: 25% → $114.8M × 0.5% = $574K.</div>
+        <div><span style="color:var(--v);font-weight:600;">⁵ Metals uplift:</span> Annualised ASD volume = $443.5M × 12/5 = $1.064B. Commission = 0.15%. Conservative: 10% volume growth from fee review and perps → $106.4M × 0.15% = $160K. Base: 15% → $159.6M × 0.15% = $239K. Upside: 25% → $266M × 0.15% = $399K.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="stitle">Cost considerations — qualitative</div>
+    <div class="card">
+      <div style="font-size:11px;color:var(--t2);line-height:1.7;margin-bottom:12px;">Detailed cost modelling requires internal engineering, compliance, and operational input not available externally. The following buckets are indicative of what a launch of this nature would involve:</div>
+      <div style="display:grid;gap:7px;margin-bottom:14px;">
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--r);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Tech build &amp; integration</div><div style="font-size:10px;color:var(--t2);">Options chain UI, DOM, TradingView integration, UAE Pass integration. One-time capital expenditure.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--r);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Regulatory &amp; compliance</div><div style="font-size:10px;color:var(--t2);">Partner agreements, legal review, regulatory filing and liaison. One-time.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--a);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Marketing &amp; activation</div><div style="font-size:10px;color:var(--t2);">Targeted to existing power and active trader segments. Low CAC — the audience already exists on platform.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--a);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Ongoing operational</div><div style="font-size:10px;color:var(--t2);">Support staff training for derivatives, market data fees, clearing partner costs. Annual recurring.</div></div>
+        </div>
+      </div>
+      <div class="callout ca">Year 1 will carry one-time setup costs across tech, regulatory, and compliance — dampening net contribution. However, given Wio's existing user base (likely materially larger than the 35,605 traders in the 2025 dataset), early adoption could offset a significant portion of these costs. Profitability in Year 1 is plausible in base and upside scenarios. Year 2 onwards the one-time costs are fully absorbed and revenue compounds.</div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="stitle">Dataset caveat</div>
+    <div class="card">
+      <div style="font-size:11px;color:var(--t2);line-height:1.7;">All analysis is based on the dataset provided — 35,605 traders over a 5-month window (Apr–Aug 2025). Wio's current user base is likely materially larger given platform growth since then. All projections, revenue estimates, and adoption assumptions should be read as conservative floors — the same assumptions applied to current user numbers would compound these figures meaningfully.</div>
+    </div>
+  </div>
+</div>
+
+<!-- TAB 10: RISKS & OKRs -->
+<div id="page-p10" class="page">
+  <div class="hero">
+    <div class="eyebrow">Part 2 · Point 5</div>
+    <div class="htitle">Risks, dependencies &amp; <em>OKRs</em></div>
+    <div class="hsub">What could go wrong, what we depend on, and how we measure success. All OKRs tied to data already available in the platform.</div>
+  </div>
+
+  <div class="sec">
+    <div class="stitle">Risk register</div>
+    <div class="card" style="padding:0;overflow:hidden;">
+      <table>
+        <thead>
+          <tr>
+            <th style="width:28%;">Risk</th>
+            <th style="width:10%;">Severity</th>
+            <th style="width:62%;">Mitigation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:600;color:var(--t);">Clearing partner for options — exchange-traded options require a US broker-dealer with options clearing capability. Binary dependency — no partner, no launch.</td>
+            <td><span class="tag tr">High</span></td>
+            <td style="color:var(--t2);">Identify and shortlist before any timeline is committed. Must be resolved in discovery — not during build.</td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;color:var(--t);">Regulatory path unclear for crypto perps and metals futures — launching without confirmed regulatory coverage is not an option.</td>
+            <td><span class="tag tr">High</span></td>
+            <td style="color:var(--t2);">Engage legal early. Explore whether Fuze's existing structure covers perps before assuming a new licence. Do not launch before path is confirmed.</td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;color:var(--t);">Power trader churn if F&amp;O is delayed — 1,619 power traders generate 67.5% of volume. Without professional tools, sophisticated strategies will migrate elsewhere.</td>
+            <td><span class="tag tr">High</span></td>
+            <td style="color:var(--t2);">Speed to market. DOM and TradingView scoped immediately as parallel workstreams. Every month of delay is a retention risk.</td>
+          </tr>
+          <tr>
+            <td style="font-weight:600;color:var(--t);">Onboarding friction limiting top of funnel — banking-first flow creates friction for investment-only users. UAE Pass integration not yet live.</td>
+            <td><span class="tag ta">Medium</span></td>
+            <td style="color:var(--t2);">UAE Pass integration as quick win. Investments-only signup track — bank account as a later cross-sell, not a prerequisite.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="stitle">Key dependencies</div>
+    <div class="card">
+      <div style="display:grid;gap:7px;">
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--r);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Clearing partner selection</div><div style="font-size:10px;color:var(--t2);">Options cannot launch without this. BD and legal workstream, not product. Must be resolved in discovery phase.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--r);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Regulatory confirmation for crypto perps and metals futures</div><div style="font-size:10px;color:var(--t2);">Legal sign-off on the regulatory path before build begins. Explore Fuze partnership terms first.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--a);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">TradingView partnership agreement</div><div style="font-size:10px;color:var(--t2);">TradingView has a documented broker integration API — risk is timeline, not feasibility. Begin discussions early as a parallel workstream.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;align-items:flex-start;">
+          <div style="width:6px;height:6px;background:var(--a);border-radius:50%;margin-top:5px;flex-shrink:0;"></div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">UAE Pass integration</div><div style="font-size:10px;color:var(--t2);">Requires coordination with UAE Pass authority and internal engineering. Relatively fast but needs to be prioritised given the onboarding friction it solves.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="sec">
+    <div class="stitle">OKRs — Year 1</div>
+
+    <div class="card" style="margin-bottom:10px;border-left:3px solid var(--p);">
+      <div style="font-size:13px;font-weight:700;color:var(--t);margin-bottom:12px;">O1 — Launch F&amp;O and retain power traders</div>
+      <div style="font-size:11px;color:var(--t2);margin-bottom:10px;line-height:1.6;">The primary bet. Success means Wio has a functioning derivatives product and its most valuable users are staying.</div>
+      <div style="display:grid;gap:7px;">
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;">
+          <div style="font-size:9px;font-weight:700;color:var(--p);text-transform:uppercase;min-width:28px;margin-top:1px;flex-shrink:0;">KR1</div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">300+ unique options traders active by Month 6 post-launch</div><div style="font-size:10px;color:var(--t2);">Less than 20% of power trader base. Deliberately conservative — enough to prove product-market fit without overstating the expectation.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;">
+          <div style="font-size:9px;font-weight:700;color:var(--p);text-transform:uppercase;min-width:28px;margin-top:1px;flex-shrink:0;">KR2</div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">F&amp;O revenue tracked separately from equity book</div><div style="font-size:10px;color:var(--t2);">Confirms net-new contribution with zero cannibalisation. Options and futures trade alongside equities — not instead of.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;">
+          <div style="font-size:9px;font-weight:700;color:var(--p);text-transform:uppercase;min-width:28px;margin-top:1px;flex-shrink:0;">KR3</div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Power trader retention stable or improving in 6 months following F&amp;O launch</div><div style="font-size:10px;color:var(--t2);">Core churn risk metric. 1,619 power traders = 67.5% of volume. Measured against pre-launch baseline.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;">
+          <div style="font-size:9px;font-weight:700;color:var(--p);text-transform:uppercase;min-width:28px;margin-top:1px;flex-shrink:0;">KR4</div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Pro subscription taken up by 10%+ of power traders within 6 months</div><div style="font-size:10px;color:var(--t2);">Validates NTRR model. 10% = ~162 subscribers = ~$39K/year recurring revenue at launch.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-bottom:10px;border-left:3px solid var(--a);">
+      <div style="font-size:13px;font-weight:700;color:var(--t);margin-bottom:12px;">O2 — Fix crypto and metals, reduce RTY concentration</div>
+      <div style="font-size:11px;color:var(--t2);margin-bottom:10px;line-height:1.6;">The diversification bet. Success means the platform is less dependent on a single asset class.</div>
+      <div style="display:grid;gap:7px;">
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;">
+          <div style="font-size:9px;font-weight:700;color:var(--a);text-transform:uppercase;min-width:28px;margin-top:1px;flex-shrink:0;">KR1</div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">QWE active trader rate improves from 45.4% within 6 months of pricing transparency fix</div><div style="font-size:10px;color:var(--t2);">Hypothesis: opacity and cost are suppressing activation in the 54.6% dormant QWE accounts. Transparency and USD toggle should move this number.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;">
+          <div style="font-size:9px;font-weight:700;color:var(--a);text-transform:uppercase;min-width:28px;margin-top:1px;flex-shrink:0;">KR2</div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">ASD volume grows 10%+ within 6 months of fee structure review</div><div style="font-size:10px;color:var(--t2);">$1 minimum reduction directly lowers barrier for small-ticket gold and silver traders. Annualised ASD volume = ~$1.06B — 10% growth is meaningful.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;">
+          <div style="font-size:9px;font-weight:700;color:var(--a);text-transform:uppercase;min-width:28px;margin-top:1px;flex-shrink:0;">KR3</div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">RTY volume share reduces from 83.6% as crypto and metals grow</div><div style="font-size:10px;color:var(--t2);">Platform health signal — not a vanity metric. Single-product concentration is a revenue risk. Diversification is the goal.</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="border-left:3px solid var(--g);">
+      <div style="font-size:13px;font-weight:700;color:var(--t);margin-bottom:12px;">O3 — Improve activation and onboarding</div>
+      <div style="font-size:11px;color:var(--t2);margin-bottom:10px;line-height:1.6;">The onboarding bet. Success means more accounts convert to first trade, and faster.</div>
+      <div style="display:grid;gap:7px;">
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;">
+          <div style="font-size:9px;font-weight:700;color:var(--g);text-transform:uppercase;min-width:28px;margin-top:1px;flex-shrink:0;">KR1</div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Account-to-first-trade conversion rate improves following UAE Pass integration</div><div style="font-size:10px;color:var(--t2);">Measured against current baseline. Simpler onboarding → faster activation → more trading users.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;">
+          <div style="font-size:9px;font-weight:700;color:var(--g);text-transform:uppercase;min-width:28px;margin-top:1px;flex-shrink:0;">KR2</div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Account gap reduces across QWE and ASD within 12 months</div><div style="font-size:10px;color:var(--t2);">From ~54.6% (QWE) and ~45.9% (ASD). Activation, not acquisition — these users are already onboarded.</div></div>
+        </div>
+        <div style="background:var(--bg3);border-radius:6px;padding:10px 12px;display:flex;gap:10px;">
+          <div style="font-size:9px;font-weight:700;color:var(--g);text-transform:uppercase;min-width:28px;margin-top:1px;flex-shrink:0;">KR3</div>
+          <div><div style="font-size:11px;font-weight:600;color:var(--t);margin-bottom:2px;">Time-to-first-trade reduces measurably post UAE Pass integration</div><div style="font-size:10px;color:var(--t2);">A proxy for onboarding friction. Measured in days from account creation to first filled order.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout cp" style="margin-top:8px;font-size:11px;">All OKRs are measurable with existing platform data. No new tracking infrastructure required. All baselines derived from the Apr–Aug 2025 dataset provided — current figures may differ given platform growth since then.</div>
+</div>
+
+
+<script>
+function go(id,btn){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.nl').forEach(l=>l.classList.remove('active'));
+  document.getElementById('page-'+id).classList.add('active');
+  if(btn)btn.classList.add('active');
+}
+
+const P='#6B4EFF',V='#9B7EFF',A='#E09C3A',R='#E05555',G='#2DB87A';
+const GR='rgba(255,255,255,0.05)',TK='#4A4670';
+const base={responsive:true,maintainAspectRatio:false,
+  plugins:{legend:{labels:{color:TK,font:{size:10},boxWidth:8}}},
+  scales:{x:{ticks:{color:TK,font:{size:10}},grid:{color:GR}},
+          y:{ticks:{color:TK,font:{size:10}},grid:{color:GR}}}};
+
+// Size volume donut
+new Chart(document.getElementById('sizeVolChart'),{type:'doughnut',
+  data:{labels:['Whale $10k+','High $5k-10k','Growth $1k-5k','Medium $100-1k','Small <$100'],
+    datasets:[{data:[70.4,10.2,12.7,16.3,0.5],
+      backgroundColor:[R,A,P,'#3A3A7A','#2A2A5A'],borderWidth:0}]},
+  options:{responsive:true,maintainAspectRatio:false,cutout:'62%',
+    plugins:{legend:{position:'right',labels:{color:TK,font:{size:9},boxWidth:7}}}}});
+
+// Buy/sell by cadence
+new Chart(document.getElementById('buySellChart'),{type:'bar',
+  data:{labels:['Daily','Weekly','Monthly','Infrequent'],
+    datasets:[
+      {label:'Buy %',data:[66.7,73.8,77.0,76.6],backgroundColor:'rgba(107,78,255,0.65)',borderRadius:3,stack:'s'},
+      {label:'Sell %',data:[33.3,26.2,23.0,23.4],backgroundColor:'rgba(224,156,58,0.65)',borderRadius:3,stack:'s'}
+    ]},
+  options:{...base,scales:{
+    x:{ticks:{color:TK,font:{size:10}},grid:{color:GR},stacked:true},
+    y:{min:0,max:100,ticks:{color:TK,font:{size:10},callback:v=>v+'%'},grid:{color:GR},stacked:true}}}});
+
+// Monthly chart
+new Chart(document.getElementById('monthlyChart'),{type:'bar',
+  data:{labels:['Apr','May','Jun','Jul','Aug'],
+    datasets:[
+      {label:'Trades (k)',data:[189,156,177,166,195],backgroundColor:'rgba(107,78,255,0.5)',borderRadius:3,yAxisID:'y'},
+      {label:'Volume ($B)',data:[1.07,0.72,0.93,1.03,1.11],type:'line',borderColor:V,
+        backgroundColor:'transparent',pointBackgroundColor:V,tension:0.4,yAxisID:'y2',borderDash:[4,3]}
+    ]},
+  options:{...base,plugins:{legend:{display:false}},
+    scales:{
+      x:{ticks:{color:TK,font:{size:10}},grid:{color:GR}},
+      y:{ticks:{color:TK,font:{size:10},callback:v=>v+'k'},grid:{color:GR}},
+      y2:{position:'right',ticks:{color:V,font:{size:10},callback:v=>'$'+v+'B'},grid:{display:false}}}}});
+
+</script>
+
+</body></html>
